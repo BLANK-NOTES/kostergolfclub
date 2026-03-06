@@ -116,10 +116,10 @@
     #course { background:var(--dark-green); }
     #course .section-title { color:white; }
     #course .section-label { color:var(--light-gold); }
-    .course-layout { display:grid; grid-template-columns:1fr 320px; gap:44px; align-items:start; margin-top:18px; }
+    .course-layout { display:grid; grid-template-columns:1fr 300px; gap:44px; align-items:start; margin-top:18px; }
     .course-map-wrap { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:22px; }
     .course-map-title { text-align:center; font-family:'Playfair Display',serif; font-size:13px; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; }
-    .course-svg { width:100%; height:auto; }
+    .course-svg { width:100%; height:auto; display:block; border-radius:6px; }
     .course-panel { display:flex; flex-direction:column; gap:14px; }
     .course-stat { background:rgba(255,255,255,0.055); border:1px solid rgba(201,168,76,0.18); border-radius:6px; padding:18px 20px; }
     .course-stat-lbl { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.38); margin-bottom:5px; }
@@ -270,7 +270,6 @@
 
 <nav>
   <div class="nav-logo" onclick="showPage('main')">
-    
     <div>
       <div class="nav-logo-text">KOSTER GOLF CLUB</div>
       <div class="nav-logo-sub">Koster · North-West · South Africa</div>
@@ -288,49 +287,49 @@
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
-<div class="nav-right-logo" style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" style="height:44px;width:auto;display:block;flex-shrink:0;">
-  <defs>
-    <linearGradient id="sgR" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2D6A4F"/><stop offset="50%" style="stop-color:#1B4332"/><stop offset="100%" style="stop-color:#0f2d1a"/></linearGradient>
-    <linearGradient id="bgR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f5e88a"/><stop offset="50%" style="stop-color:#C9A84C"/><stop offset="100%" style="stop-color:#9a7a28"/></linearGradient>
-    <linearGradient id="sfR" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#c8a83c"/><stop offset="35%" style="stop-color:#f0dc80"/><stop offset="65%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#c8a83c"/></linearGradient>
-    <linearGradient id="hdR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#a07820"/></linearGradient>
-    <filter id="shR"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/></filter>
-  </defs>
-  <path d="M100 6 L191 42 L191 128 Q191 188 100 218 Q9 188 9 128 L9 42 Z" fill="url(#bgR)" filter="url(#shR)"/>
-  <path d="M100 14 L183 48 L183 128 Q183 183 100 210 Q17 183 17 128 L17 48 Z" fill="url(#sgR)"/>
-  <path d="M100 22 L175 55 L175 128 Q175 177 100 202 Q25 177 25 128 L25 55 Z" fill="none" stroke="url(#bgR)" stroke-width="1.8" opacity="0.8"/>
-  <line x1="62" y1="44" x2="146" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="62" y1="44" x2="70" y2="56" stroke="#7a5c10" stroke-width="5.5" stroke-linecap="round" opacity="0.85"/>
-  <line x1="64" y1="47" x2="67" y2="52" stroke="#e8d070" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <ellipse cx="142" cy="162" rx="4" ry="3" transform="rotate(-56,142,162)" fill="#c8a83c"/>
-  <path d="M134 171 Q146 162 154 165 Q158 170 152 176 Q140 180 132 176 Z" fill="url(#hdR)" stroke="#9a7820" stroke-width="0.8"/>
-  <circle cx="59" cy="41" r="10" fill="none" stroke="#d4b84a" stroke-width="2.2"/>
-  <circle cx="59" cy="41" r="3" fill="none" stroke="#d4b84a" stroke-width="1.5"/>
-  <line x1="49" y1="41" x2="69" y2="41" stroke="#d4b84a" stroke-width="1.5"/>
-  <line x1="59" y1="31" x2="59" y2="51" stroke="#d4b84a" stroke-width="1.5"/>
-  <line x1="138" y1="44" x2="54" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="138" y1="44" x2="130" y2="56" stroke="#7a5c10" stroke-width="5.5" stroke-linecap="round" opacity="0.85"/>
-  <line x1="136" y1="47" x2="133" y2="52" stroke="#e8d070" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <ellipse cx="58" cy="162" rx="4" ry="3" transform="rotate(56,58,162)" fill="#c8a83c"/>
-  <path d="M46 165 Q54 159 66 162 Q68 170 60 176 Q48 176 44 170 Z" fill="url(#hdR)" stroke="#9a7820" stroke-width="0.8"/>
-  <circle cx="141" cy="41" r="10" fill="white" opacity="0.93"/>
-  <circle cx="137" cy="37" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="142" cy="35" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="146" cy="39" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="145" cy="44" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="140" cy="46" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="136" cy="43" r="1.4" fill="#bbb" opacity="0.45"/>
-  <circle cx="141" cy="41" r="10" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
-  <g transform="translate(100,120)">
-    <ellipse cx="0" cy="1" rx="15" ry="7" fill="rgba(0,0,0,0.25)"/>
-    <path d="M-2 0 Q-10 -9 -18 -4 Q-16 0 -18 4 Q-10 9 -2 0 Z" fill="#d4b84a"/>
-    <path d="M-2 0 Q-9 -7 -15 -3 Q-14 0 -15 3 Q-9 7 -2 0 Z" fill="#f0dc80" opacity="0.6"/>
-    <path d="M2 0 Q10 -9 18 -4 Q16 0 18 4 Q10 9 2 0 Z" fill="#d4b84a"/>
-    <path d="M2 0 Q9 -7 15 -3 Q14 0 15 3 Q9 7 2 0 Z" fill="#f0dc80" opacity="0.6"/>
-    <ellipse cx="0" cy="0" rx="6" ry="5" fill="#C9A84C"/>
-    <ellipse cx="0" cy="0" rx="3.5" ry="2.8" fill="#f0dc80"/>
-  </g>
-  <ellipse cx="100" cy="194" rx="56" ry="6" fill="rgba(0,0,0,0.2)"/>
-  <path d="M44 183 Q100 175 156 183 L153 197 Q100 205 47 197 Z" fill="#C9A84C"/>
-  <path d="M50 184 Q100 178 150 184 L149 189 Q100 183 51 189 Z" fill="#f0dc80" opacity="0.3"/>
-  <path d="M44 183 Q32 182 33 193 Q35 201 47 197 Q40 193 42 187 Z" fill="#9a7820"/>
-  <path d="M156 183 Q168 182 167 193 Q165 201 153 197 Q160 193 158 187 Z" fill="#9a7820"/>
-</svg></div>
+  <div class="nav-right-logo" style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" style="height:44px;width:auto;display:block;flex-shrink:0;">
+    <defs>
+      <linearGradient id="sgR" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2D6A4F"/><stop offset="50%" style="stop-color:#1B4332"/><stop offset="100%" style="stop-color:#0f2d1a"/></linearGradient>
+      <linearGradient id="bgR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f5e88a"/><stop offset="50%" style="stop-color:#C9A84C"/><stop offset="100%" style="stop-color:#9a7a28"/></linearGradient>
+      <linearGradient id="sfR" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#c8a83c"/><stop offset="35%" style="stop-color:#f0dc80"/><stop offset="65%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#c8a83c"/></linearGradient>
+      <linearGradient id="hdR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#a07820"/></linearGradient>
+      <filter id="shR"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/></filter>
+    </defs>
+    <path d="M100 6 L191 42 L191 128 Q191 188 100 218 Q9 188 9 128 L9 42 Z" fill="url(#bgR)" filter="url(#shR)"/>
+    <path d="M100 14 L183 48 L183 128 Q183 183 100 210 Q17 183 17 128 L17 48 Z" fill="url(#sgR)"/>
+    <path d="M100 22 L175 55 L175 128 Q175 177 100 202 Q25 177 25 128 L25 55 Z" fill="none" stroke="url(#bgR)" stroke-width="1.8" opacity="0.8"/>
+    <line x1="62" y1="44" x2="146" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/>
+    <line x1="62" y1="44" x2="70" y2="56" stroke="#7a5c10" stroke-width="5.5" stroke-linecap="round" opacity="0.85"/>
+    <line x1="64" y1="47" x2="67" y2="52" stroke="#e8d070" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <ellipse cx="142" cy="162" rx="4" ry="3" transform="rotate(-56,142,162)" fill="#c8a83c"/>
+    <path d="M134 171 Q146 162 154 165 Q158 170 152 176 Q140 180 132 176 Z" fill="url(#hdR)" stroke="#9a7820" stroke-width="0.8"/>
+    <circle cx="59" cy="41" r="10" fill="none" stroke="#d4b84a" stroke-width="2.2"/>
+    <circle cx="59" cy="41" r="3" fill="none" stroke="#d4b84a" stroke-width="1.5"/>
+    <line x1="49" y1="41" x2="69" y2="41" stroke="#d4b84a" stroke-width="1.5"/>
+    <line x1="59" y1="31" x2="59" y2="51" stroke="#d4b84a" stroke-width="1.5"/>
+    <line x1="138" y1="44" x2="54" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/>
+    <line x1="138" y1="44" x2="130" y2="56" stroke="#7a5c10" stroke-width="5.5" stroke-linecap="round" opacity="0.85"/>
+    <line x1="136" y1="47" x2="133" y2="52" stroke="#e8d070" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <ellipse cx="58" cy="162" rx="4" ry="3" transform="rotate(56,58,162)" fill="#c8a83c"/>
+    <path d="M46 165 Q54 159 66 162 Q68 170 60 176 Q48 176 44 170 Z" fill="url(#hdR)" stroke="#9a7820" stroke-width="0.8"/>
+    <circle cx="141" cy="41" r="10" fill="white" opacity="0.93"/>
+    <circle cx="137" cy="37" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="142" cy="35" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="146" cy="39" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="145" cy="44" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="140" cy="46" r="1.4" fill="#bbb" opacity="0.45"/><circle cx="136" cy="43" r="1.4" fill="#bbb" opacity="0.45"/>
+    <circle cx="141" cy="41" r="10" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+    <g transform="translate(100,120)">
+      <ellipse cx="0" cy="1" rx="15" ry="7" fill="rgba(0,0,0,0.25)"/>
+      <path d="M-2 0 Q-10 -9 -18 -4 Q-16 0 -18 4 Q-10 9 -2 0 Z" fill="#d4b84a"/>
+      <path d="M-2 0 Q-9 -7 -15 -3 Q-14 0 -15 3 Q-9 7 -2 0 Z" fill="#f0dc80" opacity="0.6"/>
+      <path d="M2 0 Q10 -9 18 -4 Q16 0 18 4 Q10 9 2 0 Z" fill="#d4b84a"/>
+      <path d="M2 0 Q9 -7 15 -3 Q14 0 15 3 Q9 7 2 0 Z" fill="#f0dc80" opacity="0.6"/>
+      <ellipse cx="0" cy="0" rx="6" ry="5" fill="#C9A84C"/>
+      <ellipse cx="0" cy="0" rx="3.5" ry="2.8" fill="#f0dc80"/>
+    </g>
+    <ellipse cx="100" cy="194" rx="56" ry="6" fill="rgba(0,0,0,0.2)"/>
+    <path d="M44 183 Q100 175 156 183 L153 197 Q100 205 47 197 Z" fill="#C9A84C"/>
+    <path d="M50 184 Q100 178 150 184 L149 189 Q100 183 51 189 Z" fill="#f0dc80" opacity="0.3"/>
+    <path d="M44 183 Q32 182 33 193 Q35 201 47 197 Q40 193 42 187 Z" fill="#9a7820"/>
+    <path d="M156 183 Q168 182 167 193 Q165 201 153 197 Q160 193 158 187 Z" fill="#9a7820"/>
+  </svg></div>
 </nav>
 
 <!-- MAIN PAGE -->
@@ -461,140 +460,182 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════
+       COURSE SECTION — new detailed SVG map
+  ═══════════════════════════════════════════════ -->
   <section id="course">
     <div class="section-inner">
       <div class="section-label">The Course</div>
       <h2 class="section-title">9-Hole Course Layout</h2>
       <div class="section-divider"></div>
       <div class="course-layout">
+
         <div class="course-map-wrap">
           <div class="course-map-title">KOSTER GOLF CLUB — 9-HOLE COURSE MAP</div>
-          <svg class="course-svg" viewBox="0 0 620 510" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="620" height="510" fill="#0b2210" rx="8"/>
-  <ellipse cx="310" cy="255" rx="290" ry="228" fill="#122a18" opacity="0.6"/>
+          <!-- ★ NEW DETAILED MAP — generated in the Map Editor ★ -->
+          <svg class="course-svg" viewBox="0 0 560 830" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fwG" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#4db558"/><stop offset="100%" style="stop-color:#2a7035"/>
+              </linearGradient>
+              <linearGradient id="roughG" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#1a5225"/><stop offset="100%" style="stop-color:#113a1a"/>
+              </linearGradient>
+              <linearGradient id="rpG2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#153d1c"/><stop offset="100%" style="stop-color:#0d2a12"/>
+              </linearGradient>
+              <radialGradient id="bunkerG2">
+                <stop offset="0%" style="stop-color:#f0e698"/><stop offset="100%" style="stop-color:#c8b050"/>
+              </radialGradient>
+              <linearGradient id="damG2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#5bb8e0"/><stop offset="100%" style="stop-color:#2474a8"/>
+              </linearGradient>
+              <linearGradient id="riverG2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#4aaad0"/><stop offset="100%" style="stop-color:#2470a0"/>
+              </linearGradient>
+              <linearGradient id="roadG2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#8b6a40"/><stop offset="100%" style="stop-color:#6b4e2c"/>
+              </linearGradient>
+              <filter id="sh2"><feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.5)"/></filter>
+              <filter id="lsh2"><feDropShadow dx="1" dy="1" stdDeviation="2.5" flood-color="rgba(0,0,0,0.95)"/></filter>
+              <marker id="ah2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 Z" fill="rgba(201,168,76,0.85)"/>
+              </marker>
+            </defs>
 
-  <!-- Corner tree clusters -->
-  <circle cx="60"  cy="90"  r="9" fill="#173522" opacity="0.8"/>
-  <circle cx="75"  cy="108" r="6" fill="#173522" opacity="0.6"/>
-  <circle cx="555" cy="75"  r="9" fill="#173522" opacity="0.8"/>
-  <circle cx="568" cy="92"  r="6" fill="#173522" opacity="0.6"/>
-  <circle cx="545" cy="435" r="8" fill="#173522" opacity="0.7"/>
-  <circle cx="75"  cy="425" r="7" fill="#173522" opacity="0.7"/>
-  <circle cx="310" cy="44"  r="7" fill="#173522" opacity="0.6"/>
+            <rect width="560" height="830" fill="#0d1f10" rx="10"/>
+            <!-- Course shape -->
+            <path fill="url(#roughG)" filter="url(#sh2)" d="M 91.0,189.0 L 15.0,212.0 L 4.0,292.0 L 3.0,361.0 L 13.0,421.0 L 30.0,471.0 L 55.0,552.0 L 64.0,567.0 L 184.0,560.0 L 187.0,597.0 L 190.0,637.0 L 194.0,675.0 L 198.0,712.0 L 203.0,744.0 L 210.0,772.0 L 230.0,812.0 L 260.0,825.0 L 327.0,826.0 L 369.0,802.0 L 396.0,743.0 L 416.0,695.0 L 432.0,652.0 L 440.0,619.0 L 433.0,579.0 L 451.0,547.0 L 460.0,486.0 L 463.0,452.0 L 473.0,438.0 L 484.0,420.0 L 488.0,378.0 L 519.0,302.0 L 519.0,240.0 L 488.0,195.0 L 424.0,174.0 L 358.0,174.0 L 288.0,159.0 L 205.0,164.0 L 141.0,183.0 Z"/>
+            <path fill="url(#fwG)" d="M 98.5,200.8 L 24.7,222.1 L 15.4,300.1 L 15.7,366.9 L 26.6,424.5 L 44.0,472.1 L 68.5,548.3 L 77.2,562.3 L 195.4,551.9 L 196.3,586.5 L 197.4,625.1 L 200.0,662.4 L 202.9,698.9 L 207.1,730.6 L 213.5,758.4 L 232.2,798.2 L 260.9,811.0 L 325.1,812.1 L 365.2,788.5 L 390.2,730.2 L 408.3,683.3 L 422.5,641.7 L 429.1,610.2 L 420.9,571.9 L 437.7,542.5 L 446.0,486.3 L 449.3,454.9 L 459.5,441.7 L 470.8,424.6 L 475.7,384.7 L 508.0,310.7 L 509.4,250.2 L 480.0,206.5 L 418.3,186.8 L 354.7,187.6 L 287.7,173.0 L 208.2,177.6 L 146.8,195.7 Z"/>
+            <!-- Mow stripes -->
+            <path stroke="rgba(255,255,255,0.03)" stroke-width="20" fill="none" stroke-linecap="round" d="M3,361 L13,421 L30,471 L64,567"/>
+            <path stroke="rgba(255,255,255,0.02)" stroke-width="20" fill="none" stroke-linecap="round" d="M473,438 L463,452 L460,486"/>
 
-  <!-- ══ 9 FAIRWAYS — single clockwise loop ══ -->
+            <!-- ── ELEMENTS ── -->
+            <!-- Rough patches -->
+            <g transform="translate(108,292)"><ellipse rx="46" ry="36" fill="url(#rpG2)" opacity="0.76"/></g>
+            <g transform="translate(295,595)"><ellipse rx="36" ry="52" fill="url(#rpG2)" opacity="0.7"/></g>
+            <g transform="translate(104,498)"><ellipse rx="32" ry="24" fill="url(#rpG2)" opacity="0.68"/></g>
+            <g transform="translate(366,432)"><ellipse rx="32" ry="24" fill="url(#rpG2)" opacity="0.68"/></g>
+            <g transform="translate(227,399)"><ellipse rx="45" ry="32" fill="url(#rpG2)" opacity="0.78"/></g>
+            <g transform="translate(216,270)"><ellipse rx="45" ry="32" fill="url(#rpG2)" opacity="0.78"/></g>
+            <g transform="translate(291,782)"><ellipse rx="45" ry="32" fill="url(#rpG2)" opacity="0.78"/></g>
 
-  <!-- Hole 1: Clubhouse tee → top-left green -->
-  <path d="M105,400 Q100,365 100,330 Q100,295 108,268" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <!-- Green 1 -->
-  <ellipse cx="110" cy="258" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="110" cy="250" r="2.5" fill="white"/>
-  <line x1="110" y1="247" x2="110" y2="235" stroke="white" stroke-width="1.5"/>
-  <rect x="110" y="235" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Trees -->
+            <g transform="translate(148,228)"><circle r="13" fill="#163e1c" opacity="0.82"/><circle cx="10" cy="-6" r="9" fill="#163e1c" opacity="0.64"/><circle cx="-8" cy="-7" r="8" fill="#1a4820" opacity="0.55"/></g>
+            <g transform="translate(428,222)"><circle r="12" fill="#163e1c" opacity="0.8"/><circle cx="9" cy="-5" r="8" fill="#163e1c" opacity="0.6"/></g>
+            <g transform="translate(128,479)"><circle r="11" fill="#163e1c" opacity="0.72"/><circle cx="8" cy="-5" r="7" fill="#163e1c" opacity="0.52"/></g>
+            <g transform="translate(482,360)"><circle r="11" fill="#163e1c" opacity="0.72"/><circle cx="-8" cy="-5" r="7" fill="#163e1c" opacity="0.52"/></g>
+            <g transform="translate(100,342)"><circle r="10" fill="#163e1c" opacity="0.68"/><circle cx="8" cy="-4" r="7" fill="#163e1c" opacity="0.5"/></g>
+            <g transform="translate(462,347)"><circle r="10" fill="#163e1c" opacity="0.68"/><circle cx="-8" cy="-4" r="7" fill="#163e1c" opacity="0.5"/></g>
+            <g transform="translate(292,657)"><circle r="13" fill="#163e1c" opacity="0.82"/><circle cx="10" cy="-6" r="9" fill="#163e1c" opacity="0.62"/><circle cx="-8" cy="-7" r="7" fill="#1a4820" opacity="0.52"/></g>
 
-  <!-- Hole 2: left side curving up -->
-  <path d="M110,258 Q112,228 128,204 Q144,180 165,162" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="170" cy="155" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="170" cy="147" r="2.5" fill="white"/>
-  <line x1="170" y1="144" x2="170" y2="132" stroke="white" stroke-width="1.5"/>
-  <rect x="170" y="132" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- River -->
+            <g transform="translate(-4,-216)">
+              <path d="M196,510 Q188,562 184,622 Q182,670 188,712 Q192,742 202,764" stroke="url(#riverG2)" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.82"/>
+              <path d="M196,510 Q188,562 184,622 Q182,670 188,712 Q192,742 202,764" stroke="rgba(140,210,240,0.22)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </g>
 
-  <!-- Hole 3: upper-left to top-centre -->
-  <path d="M170,155 Q200,138 232,128 Q264,118 296,116" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="305" cy="114" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="305" cy="106" r="2.5" fill="white"/>
-  <line x1="305" y1="103" x2="305" y2="91"  stroke="white" stroke-width="1.5"/>
-  <rect x="305" y="91"  width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Dam -->
+            <g transform="translate(292,270)">
+              <ellipse rx="28" ry="38" fill="url(#damG2)" opacity="0.88"/>
+              <ellipse rx="18" ry="25" fill="#90d8f4" opacity="0.28"/>
+              <text dy="4" font-family="sans-serif" font-size="11" fill="rgba(190,240,255,0.8)" text-anchor="middle">💧</text>
+              <text dy="18" font-family="sans-serif" font-size="7" fill="rgba(190,240,255,0.5)" text-anchor="middle">DAM</text>
+            </g>
 
-  <!-- Hole 4: top-centre to top-right -->
-  <path d="M305,114 Q336,110 366,116 Q396,122 420,138" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="428" cy="144" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="428" cy="136" r="2.5" fill="white"/>
-  <line x1="428" y1="133" x2="428" y2="121" stroke="white" stroke-width="1.5"/>
-  <rect x="428" y="121" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Dirt road -->
+            <g transform="translate(0,0)">
+              <path d="M502,362 Q421,365 340,368" stroke="url(#roadG2)" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+              <path d="M502,362 Q421,365 340,368" stroke="rgba(200,160,80,0.18)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="10,8"/>
+            </g>
 
-  <!-- Hole 5: top-right curving to far right -->
-  <path d="M428,144 Q455,158 468,182 Q481,206 480,234" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="478" cy="244" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="478" cy="236" r="2.5" fill="white"/>
-  <line x1="478" y1="233" x2="478" y2="221" stroke="white" stroke-width="1.5"/>
-  <rect x="478" y="221" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Parking -->
+            <g transform="translate(327,380)">
+              <rect x="-32" y="-22" width="64" height="44" rx="4" fill="#2a2420" stroke="rgba(201,168,76,0.35)" stroke-width="1.5"/>
+              <line x1="-20" y1="-18" x2="-20" y2="18" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <line x1="-8" y1="-18" x2="-8" y2="18" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <line x1="4" y1="-18" x2="4" y2="18" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <line x1="16" y1="-18" x2="16" y2="18" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <text dy="5" font-family="sans-serif" font-size="9" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-weight="bold">P</text>
+            </g>
 
-  <!-- Hole 6: right side sweeping down -->
-  <path d="M478,244 Q480,272 472,298 Q464,324 448,344" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="440" cy="352" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="440" cy="344" r="2.5" fill="white"/>
-  <line x1="440" y1="341" x2="440" y2="329" stroke="white" stroke-width="1.5"/>
-  <rect x="440" y="329" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Play direction arrows -->
+            <path d="M392,512 Q379,647 355,762" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M249,758 Q245,657 250,569" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M235,514 Q202,513 170,511" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M87,531 Q78,395 71,247" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M270,229 Q366,254 468,291" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)" transform="translate(0,8)"/>
+            <path d="M460,229 Q318,228 185,210" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M268,314 Q329,337 393,343" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M311,329 Q241,361 156,376" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M150,377 Q151,413 146,448" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
+            <path d="M216,453 Q253,471 294,503" stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none" stroke-dasharray="10,7" marker-end="url(#ah2)"/>
 
-  <!-- Hole 7: right to bottom-centre -->
-  <path d="M440,352 Q416,368 388,376 Q360,384 330,382" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="318" cy="380" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="318" cy="372" r="2.5" fill="white"/>
-  <line x1="318" y1="369" x2="318" y2="357" stroke="white" stroke-width="1.5"/>
-  <rect x="318" y="357" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Bunkers -->
+            <g transform="translate(72,317)"><ellipse rx="28" ry="17" fill="url(#bunkerG2)" opacity="0.9"/></g>
+            <g transform="translate(88,327)"><ellipse rx="18" ry="12" fill="url(#bunkerG2)" opacity="0.85"/></g>
+            <g transform="translate(249,602)"><ellipse rx="18" ry="11" fill="url(#bunkerG2)" opacity="0.85"/></g>
 
-  <!-- Hole 8: bottom-centre to bottom-left -->
-  <path d="M318,380 Q288,382 260,374 Q232,366 210,350" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <ellipse cx="200" cy="342" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="200" cy="334" r="2.5" fill="white"/>
-  <line x1="200" y1="331" x2="200" y2="319" stroke="white" stroke-width="1.5"/>
-  <rect x="200" y="319" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Greens -->
+            <g transform="translate(144,456)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(348,788)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(249,551)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(74,235)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(296,509)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(480,290)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(168,208)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(157,507)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
+            <g transform="translate(407,346)"><ellipse rx="21" ry="14" fill="#5dcc6a" stroke="white" stroke-width="1.5"/><line x1="0" y1="0" x2="0" y2="-20" stroke="white" stroke-width="1.5"/><polygon points="0,-20 13,-15 0,-10" fill="#e74c3c"/></g>
 
-  <!-- Hole 9: bottom-left back to Clubhouse -->
-  <path d="M200,342 Q175,330 158,310 Q142,290 132,264 Q122,238 118,208" stroke="#2d7a3a" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.9"/>
-  <!-- Hole 9 green is at the clubhouse -->
-  <ellipse cx="116" cy="196" rx="18" ry="12" fill="#3aaa50" opacity="0.9"/>
-  <circle  cx="116" cy="188" r="2.5" fill="white"/>
-  <line x1="116" y1="185" x2="116" y2="173" stroke="white" stroke-width="1.5"/>
-  <rect x="116" y="173" width="10" height="6" fill="#e74c3c" opacity="0.9"/>
+            <!-- Hole numbers -->
+            <g transform="translate(393,483)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">1</text></g>
+            <g transform="translate(242,784)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">2</text></g>
+            <g transform="translate(252,512)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">3</text></g>
+            <g transform="translate(90,541)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">4</text></g>
+            <g transform="translate(257,229)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">5</text></g>
+            <g transform="translate(471,229)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">6</text></g>
+            <g transform="translate(258,306)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">7</text></g>
+            <g transform="translate(316,325)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">8</text></g>
+            <g transform="translate(202,444)"><circle r="17" fill="#0f2d1a" stroke="#C9A84C" stroke-width="2.2" filter="url(#lsh2)"/><text dy="5" font-family="Georgia,serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">9</text></g>
 
-  <!-- ══ HAZARDS ══ -->
-  <!-- Water hazard centre -->
-  <ellipse cx="310" cy="258" rx="34" ry="22" fill="#1558a0" opacity="0.75"/>
-  <ellipse cx="310" cy="258" rx="22" ry="14" fill="#1a6ab8" opacity="0.5"/>
-  <text x="310" y="262" font-family="sans-serif" font-size="9" fill="rgba(140,200,255,0.8)" text-anchor="middle">💧</text>
+            <!-- Clubhouse -->
+            <g transform="translate(302,396)">
+              <rect x="-30" y="-5" width="60" height="42" rx="4" fill="#1B4332" stroke="#C9A84C" stroke-width="2.5"/>
+              <polygon points="-33,-5 0,-24 33,-5" fill="#245e38" stroke="#C9A84C" stroke-width="1.5"/>
+              <rect x="-7" y="16" width="14" height="21" rx="2" fill="#0a1a0d"/>
+              <rect x="-26" y="1" width="11" height="9" rx="1" fill="#7ccce8" opacity="0.75"/>
+              <rect x="15" y="1" width="11" height="9" rx="1" fill="#7ccce8" opacity="0.75"/>
+              <text dy="48" font-family="Georgia,serif" font-size="6.5" fill="#C9A84C" text-anchor="middle" font-weight="bold">CLUBHOUSE</text>
+            </g>
 
-  <!-- Bunkers -->
-  <ellipse cx="240" cy="290" rx="16" ry="9"  fill="#c8b56a" opacity="0.65"/>
-  <ellipse cx="378" cy="210" rx="13" ry="8"  fill="#c8b56a" opacity="0.6"/>
-  <ellipse cx="320" cy="338" rx="11" ry="7"  fill="#c8b56a" opacity="0.6"/>
-  <ellipse cx="175" cy="210" rx="12" ry="7"  fill="#c8b56a" opacity="0.55"/>
-  <ellipse cx="432" cy="268" rx="14" ry="8"  fill="#c8b56a" opacity="0.6"/>
+            <!-- Legend -->
+            <rect x="10" y="668" width="152" height="150" rx="6" fill="rgba(0,0,0,0.7)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+            <text x="20" y="684" font-family="sans-serif" font-size="9" fill="rgba(201,168,76,0.6)" letter-spacing="1.5">LEGEND</text>
+            <rect x="20" y="690" width="14" height="9" rx="2" fill="#4db558"/><text x="40" y="698" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Fairway</text>
+            <ellipse cx="27" cy="712" rx="8" ry="5" fill="#153d1c"/><text x="40" y="716" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Rough</text>
+            <ellipse cx="27" cy="729" rx="7" ry="5" fill="#5dcc6a"/><line x1="27" y1="724" x2="27" y2="718" stroke="white" stroke-width="1.2"/><polygon points="27,718 33,721 27,724" fill="#e74c3c"/><text x="40" y="733" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Green / Flag</text>
+            <ellipse cx="27" cy="748" rx="8" ry="5" fill="#ede090"/><text x="40" y="752" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Sand Bunker</text>
+            <ellipse cx="27" cy="765" rx="8" ry="5" fill="#5bb8e0"/><text x="40" y="769" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Dam / River</text>
+            <rect x="20" y="776" width="14" height="8" rx="2" fill="#6b4e2c"/><text x="40" y="784" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Dirt Road</text>
+            <rect x="20" y="791" width="14" height="8" rx="2" fill="#2a2420" stroke="rgba(201,168,76,0.3)" stroke-width="1"/><text x="40" y="799" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Parking</text>
+            <line x1="20" y1="810" x2="34" y2="810" stroke="rgba(201,168,76,0.7)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#ah2)"/><text x="40" y="814" font-family="sans-serif" font-size="9.5" fill="rgba(255,255,255,0.65)">Play Direction</text>
 
-  <!-- ══ CLUBHOUSE ══ -->
-  <rect x="52" y="410" width="72" height="48" fill="#1B4332" rx="3" stroke="#C9A84C" stroke-width="1.5"/>
-  <rect x="64" y="399" width="48" height="14" fill="#2D6A4F" rx="2" stroke="#C9A84C" stroke-width="1"/>
-  <text x="88" y="436" font-family="sans-serif" font-size="7" fill="#C9A84C" text-anchor="middle" font-weight="bold">CLUB</text>
-  <text x="88" y="447" font-family="sans-serif" font-size="7" fill="#C9A84C" text-anchor="middle" font-weight="bold">HOUSE</text>
-  <!-- dashed line from clubhouse to tee 1 -->
-  <line x1="88" y1="410" x2="105" y2="400" stroke="rgba(201,168,76,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- Title bar -->
+            <rect x="10" y="10" width="318" height="28" rx="5" fill="rgba(0,0,0,0.62)"/>
+            <text x="20" y="28" font-family="Georgia,serif" font-size="13" fill="#C9A84C" font-weight="bold" letter-spacing="1.5">KOSTER GOLF CLUB  ·  9 HOLES</text>
 
-  <!-- ══ HOLE NUMBERS on map ══ -->
-  <!-- Each number sits beside the fairway midpoint -->
-  <text x="80"  y="342" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">1</text>
-  <text x="136" y="192" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">2</text>
-  <text x="232" y="100" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">3</text>
-  <text x="372" y="100" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">4</text>
-  <text x="500" y="196" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">5</text>
-  <text x="502" y="302" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">6</text>
-  <text x="396" y="400" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">7</text>
-  <text x="232" y="402" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">8</text>
-  <text x="152" y="302" font-family="sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="bold">9</text>
-
-  <!-- ══ LEGEND ══ -->
-  <rect x="450" y="432" width="158" height="66" fill="rgba(0,0,0,0.35)" rx="4"/>
-  <rect x="460" y="442" width="10" height="6" fill="#2d7a3a" rx="1"/>
-  <text x="475" y="449" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,0.7)">Fairway / Hole</text>
-  <ellipse cx="465" cy="462" rx="5" ry="3" fill="#3aaa50"/>
-  <text x="475" y="465" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,0.7)">Green</text>
-  <ellipse cx="465" cy="476" rx="5" ry="3" fill="#c8b56a" opacity="0.8"/>
-  <text x="475" y="479" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,0.7)">Bunker</text>
-  <ellipse cx="465" cy="490" rx="5" ry="3" fill="#1558a0" opacity="0.9"/>
-  <text x="475" y="493" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,0.7)">Water</text>
-</svg>
+            <!-- Compass -->
+            <g transform="translate(522,66)">
+              <circle r="24" fill="rgba(0,0,0,0.58)" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"/>
+              <polygon points="0,-20 -4,-8 4,-8" fill="#C9A84C"/>
+              <polygon points="0,20 -4,8 4,8" fill="rgba(201,168,76,0.3)"/>
+              <text y="-7" font-family="Georgia,serif" font-size="10" fill="#C9A84C" text-anchor="middle" font-weight="bold">N</text>
+              <text y="16" font-family="Georgia,serif" font-size="8" fill="rgba(255,255,255,0.28)" text-anchor="middle">S</text>
+            </g>
+          </svg>
         </div>
+
         <div class="course-panel">
           <div class="course-stat"><div class="course-stat-lbl">Total Holes</div><div class="course-stat-val">9</div><div class="course-stat-sub">9-Hole Layout</div></div>
           <div class="course-stat"><div class="course-stat-lbl">Location</div><div class="course-stat-val" style="font-size:20px;">Koster</div><div class="course-stat-sub">North-West Province, South Africa</div></div>
@@ -602,10 +643,13 @@
           <div class="course-holes-wrap">
             <div class="course-holes-lbl">All 9 Holes</div>
             <div class="holes-grid">
-              <div class="hole-n">1</div><div class="hole-n">2</div><div class="hole-n">3</div><div class="hole-n">4</div><div class="hole-n">5</div><div class="hole-n">6</div><div class="hole-n">7</div><div class="hole-n">8</div><div class="hole-n">9</div>
+              <div class="hole-n">1</div><div class="hole-n">2</div><div class="hole-n">3</div>
+              <div class="hole-n">4</div><div class="hole-n">5</div><div class="hole-n">6</div>
+              <div class="hole-n">7</div><div class="hole-n">8</div><div class="hole-n">9</div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -712,10 +756,7 @@
     <div style="padding:0 20px 20px;">
       <div class="apply-wrap">
         <div id="app-form">
-          <!-- Honeypot: invisible to humans, bots fill it -->
-          <div style="display:none;" aria-hidden="true">
-            <input type="text" id="hp-field" name="hp-field" tabindex="-1" autocomplete="off"/>
-          </div>
+          <div style="display:none;" aria-hidden="true"><input type="text" id="hp-field" name="hp-field" tabindex="-1" autocomplete="off"/></div>
           <div class="form-sec-head">📋 Business Information</div>
           <div class="form-body-inner">
             <div class="form-row">
@@ -749,20 +790,13 @@
           <div class="form-error" id="form-error"></div>
           <div class="form-submit">
             <button class="submit-btn" id="submit-btn" onclick="submitApp()">Submit Application ⛳</button>
-            <p class="form-note">
-              After submitting, Azel or Hannetjie will contact you within 2–3 business days.<br/>
-              Or call us directly: <strong style="color:#1B4332;">072 410 8960</strong> (Azel) &nbsp;·&nbsp; <strong style="color:#1B4332;">076 916 3960</strong> (Hannetjie)
-            </p>
+            <p class="form-note">After submitting, Azel or Hannetjie will contact you within 2–3 business days.<br/>Or call us directly: <strong style="color:#1B4332;">072 410 8960</strong> (Azel) &nbsp;·&nbsp; <strong style="color:#1B4332;">076 916 3960</strong> (Hannetjie)</p>
           </div>
         </div>
         <div class="form-success" id="app-success">
           <div class="success-icon">⛳</div>
           <h3 class="success-title">Application Received!</h3>
-          <p class="success-text">
-            Thank you for your interest in sponsoring Koster Golf Club.<br/>
-            Azel or Hannetjie will be in touch with you shortly.<br/><br/>
-            <strong style="color:#1B4332; font-size:17px;">072 410 8960</strong> (Azel) &nbsp;·&nbsp; <strong style="color:#1B4332; font-size:17px;">076 916 3960</strong> (Hannetjie)
-          </p>
+          <p class="success-text">Thank you for your interest in sponsoring Koster Golf Club.<br/>Azel or Hannetjie will be in touch with you shortly.<br/><br/><strong style="color:#1B4332; font-size:17px;">072 410 8960</strong> (Azel) &nbsp;·&nbsp; <strong style="color:#1B4332; font-size:17px;">076 916 3960</strong> (Hannetjie)</p>
           <button class="btn-primary" style="margin-top:28px;" onclick="showPage('main')">← Back to Main Site</button>
         </div>
       </div>
@@ -772,177 +806,37 @@
 
 <script>
   let selectedPkg = '';
-
-  function updateCounter(el) {
-    const counter = document.getElementById('msg-counter');
-    if (counter) counter.textContent = el.value.length;
-  }
-
-  function showPage(page) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + page).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.getElementById('navLinks').classList.remove('open');
-  }
-
-  function navTo(sectionId) {
-    showPage('main');
-    setTimeout(() => {
-      const el = document.getElementById(sectionId);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 80);
-  }
-
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-
-  function selectPkg(pkg) {
-    selectedPkg = pkg;
-    document.querySelectorAll('.pkg-opt').forEach(el => el.classList.remove('sel'));
-    document.getElementById('pkg-' + pkg).classList.add('sel');
-  }
-
-  /* ═══════════════════════════════════════════════════
-     SECURITY HELPERS
-     - sanitize()   strips all HTML/script tags and
-       SQL injection patterns before any value is used
-     - validateEmail() proper RFC-style email check
-     - validatePhone() SA phone number check
-     - rateLimiter    prevents spam-clicking submit
-  ═══════════════════════════════════════════════════ */
-
-  // Honeypot field check — bots fill hidden fields, humans don't
-  // (the hidden input #hp-field is added to the form below)
-
-  function sanitize(str) {
-    if (typeof str !== 'string') return '';
-    return str
-      // Strip all HTML tags
-      .replace(/<[^>]*>/g, '')
-      // Strip SQL injection patterns
-      .replace(/(['";\\]|--|\bDROP\b|\bSELECT\b|\bINSERT\b|\bDELETE\b|\bUPDATE\b|\bUNION\b|\bEXEC\b|\bSCRIPT\b|\bALERT\b|\bEVAL\b)/gi, '')
-      // Remove null bytes and control characters
-      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
-      // Trim whitespace
-      .trim()
-      // Cap length to prevent huge payloads
-      .slice(0, 500);
-  }
-
-  function validateEmail(email) {
-    if (!email) return true; // email is optional
-    return /^[^\s@<>"']{1,64}@[^\s@<>"']{1,253}\.[a-zA-Z]{2,}$/.test(email);
-  }
-
-  function validatePhone(phone) {
-    // Allow SA formats: 072 410 8960 / 0724108960 / +27724108960
-    return /^(\+27|0)[0-9\s\-]{8,14}$/.test(phone.replace(/\s/g,''));
-  }
-
-  // Rate limiter — max 1 successful submit per 60s per session
-  let lastSubmitTime = 0;
-
-  async function submitApp() {
-    const errBox = document.getElementById('form-error');
-    const btn    = document.getElementById('submit-btn');
-
-    // ── Honeypot check (bots fill this, humans leave it blank) ──
-    const hp = document.getElementById('hp-field');
-    if (hp && hp.value !== '') {
-      // Silently block — don't tell bots they failed
-      document.getElementById('app-form').style.display = 'none';
-      document.getElementById('app-success').classList.add('show');
-      return;
-    }
-
-    // ── Rate limiting ──
-    const now = Date.now();
-    if (now - lastSubmitTime < 60000) {
-      errBox.textContent = '⏳ Please wait a moment before submitting again.';
-      errBox.classList.add('show');
-      return;
-    }
-
-    // ── Read & sanitize all fields ──
-    const biz      = sanitize(document.getElementById('f-biz').value);
-    const contact  = sanitize(document.getElementById('f-contact').value);
-    const phone    = sanitize(document.getElementById('f-phone').value);
-    const email    = sanitize(document.getElementById('f-email').value);
-    const town     = sanitize(document.getElementById('f-town').value);
-    const industry = sanitize(document.getElementById('f-industry').value);
-    const budget   = sanitize(document.getElementById('f-budget').value);
-    const message  = sanitize(document.getElementById('f-message').value);
-    const source   = sanitize(document.getElementById('f-source').value);
-
-    // ── Validation ──
-    const errors = [];
-
-    if (!biz || biz.length < 2)
-      errors.push('Business / Organisation Name is required (minimum 2 characters).');
-
-    if (!contact || contact.length < 2)
-      errors.push('Contact Person name is required (minimum 2 characters).');
-
-    if (!phone)
-      errors.push('Phone Number is required.');
-    else if (!validatePhone(phone))
-      errors.push('Please enter a valid South African phone number (e.g. 072 410 8960).');
-
-    if (email && !validateEmail(email))
-      errors.push('Please enter a valid email address.');
-
-    if (!selectedPkg)
-      errors.push('Please select a Sponsorship Package (Platinum, Gold or Silver).');
-
-    if (errors.length > 0) {
-      errBox.innerHTML = '⚠️ Please fix the following:<br>• ' + errors.join('<br>• ');
-      errBox.classList.add('show');
-      errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-
-    errBox.classList.remove('show');
-    btn.disabled = true;
-    btn.textContent = 'Sending… ⏳';
-
-    // ── Build clean payload ──
-    const payload = {
-      'Business Name':    biz,
-      'Contact Person':   contact,
-      'Phone':            phone,
-      'Email':            email    || '(not provided)',
-      'Town / City':      town     || '(not provided)',
-      'Industry':         industry || '(not provided)',
-      'Package Selected': selectedPkg.charAt(0).toUpperCase() + selectedPkg.slice(1),
-      'Budget':           budget   || '(not provided)',
-      'Message':          message  || '(no message)',
-      'How they heard':   source   || '(not selected)',
-      '_subject':         'New Sponsorship Application — Koster Golf Club'
-    };
-
-    try {
-      const res = await fetch('https://formspree.io/f/xykngnal', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      if (res.ok) {
-        lastSubmitTime = Date.now();
-        document.getElementById('app-form').style.display = 'none';
-        document.getElementById('app-success').classList.add('show');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Server error');
-      }
-    } catch (e) {
-      btn.disabled = false;
-      btn.textContent = 'Submit Application ⛳';
-      errBox.textContent = '❌ Something went wrong sending your application. Please call us directly: 072 410 8960 (Azel) or 076 916 3960 (Hannetjie).';
-      errBox.classList.add('show');
-    }
+  function updateCounter(el){const c=document.getElementById('msg-counter');if(c)c.textContent=el.value.length;}
+  function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+page).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});document.getElementById('navLinks').classList.remove('open');}
+  function navTo(id){showPage('main');setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},80);}
+  function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+  function selectPkg(pkg){selectedPkg=pkg;document.querySelectorAll('.pkg-opt').forEach(el=>el.classList.remove('sel'));document.getElementById('pkg-'+pkg).classList.add('sel');}
+  function sanitize(str){if(typeof str!=='string')return '';return str.replace(/<[^>]*>/g,'').replace(/(['";\\]|--|\bDROP\b|\bSELECT\b|\bINSERT\b|\bDELETE\b|\bUPDATE\b|\bUNION\b|\bEXEC\b|\bSCRIPT\b|\bALERT\b|\bEVAL\b)/gi,'').replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g,'').trim().slice(0,500);}
+  function validateEmail(e){if(!e)return true;return /^[^\s@<>"']{1,64}@[^\s@<>"']{1,253}\.[a-zA-Z]{2,}$/.test(e);}
+  function validatePhone(p){return /^(\+27|0)[0-9\s\-]{8,14}$/.test(p.replace(/\s/g,''));}
+  let lastSubmitTime=0;
+  async function submitApp(){
+    const errBox=document.getElementById('form-error'),btn=document.getElementById('submit-btn');
+    const hp=document.getElementById('hp-field');
+    if(hp&&hp.value!==''){document.getElementById('app-form').style.display='none';document.getElementById('app-success').classList.add('show');return;}
+    const now=Date.now();
+    if(now-lastSubmitTime<60000){errBox.textContent='⏳ Please wait a moment before submitting again.';errBox.classList.add('show');return;}
+    const biz=sanitize(document.getElementById('f-biz').value),contact=sanitize(document.getElementById('f-contact').value),phone=sanitize(document.getElementById('f-phone').value),email=sanitize(document.getElementById('f-email').value),town=sanitize(document.getElementById('f-town').value),industry=sanitize(document.getElementById('f-industry').value),budget=sanitize(document.getElementById('f-budget').value),message=sanitize(document.getElementById('f-message').value),source=sanitize(document.getElementById('f-source').value);
+    const errors=[];
+    if(!biz||biz.length<2)errors.push('Business / Organisation Name is required (minimum 2 characters).');
+    if(!contact||contact.length<2)errors.push('Contact Person name is required (minimum 2 characters).');
+    if(!phone)errors.push('Phone Number is required.');
+    else if(!validatePhone(phone))errors.push('Please enter a valid South African phone number (e.g. 072 410 8960).');
+    if(email&&!validateEmail(email))errors.push('Please enter a valid email address.');
+    if(!selectedPkg)errors.push('Please select a Sponsorship Package (Platinum, Gold or Silver).');
+    if(errors.length>0){errBox.innerHTML='⚠️ Please fix the following:<br>• '+errors.join('<br>• ');errBox.classList.add('show');errBox.scrollIntoView({behavior:'smooth',block:'center'});return;}
+    errBox.classList.remove('show');btn.disabled=true;btn.textContent='Sending… ⏳';
+    const payload={'Business Name':biz,'Contact Person':contact,'Phone':phone,'Email':email||'(not provided)','Town / City':town||'(not provided)','Industry':industry||'(not provided)','Package Selected':selectedPkg.charAt(0).toUpperCase()+selectedPkg.slice(1),'Budget':budget||'(not provided)','Message':message||'(no message)','How they heard':source||'(not selected)','_subject':'New Sponsorship Application — Koster Golf Club'};
+    try{
+      const res=await fetch('https://formspree.io/f/xykngnal',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+      if(res.ok){lastSubmitTime=Date.now();document.getElementById('app-form').style.display='none';document.getElementById('app-success').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}
+      else{const data=await res.json().catch(()=>({}));throw new Error(data.error||'Server error');}
+    }catch(e){btn.disabled=false;btn.textContent='Submit Application ⛳';errBox.textContent='❌ Something went wrong. Please call us directly: 072 410 8960 (Azel) or 076 916 3960 (Hannetjie).';errBox.classList.add('show');}
   }
 </script>
 </body>
