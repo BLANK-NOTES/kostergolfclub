@@ -248,8 +248,9 @@
       .about-grid, .course-layout { grid-template-columns:1fr; gap:40px; }
       .events-grid { grid-template-columns:1fr; }
       .gallery-grid { grid-template-columns:repeat(2,1fr); }
-      .gallery-item.wide { grid-column:span 1; aspect-ratio:4/3; }
+      .gallery-item.wide { grid-column:span 2; aspect-ratio:16/7; }
       .gallery-item.tall { grid-row:span 1; aspect-ratio:4/3; }
+      .gallery-item img { max-width:100%; width:100%; height:100%; object-fit:cover; display:block; }
       .sponsor-row { grid-template-columns:repeat(2,1fr); }
       .contact-grid { grid-template-columns:1fr; }
       .contact-info-bar { grid-column:span 1; grid-template-columns:1fr; }
@@ -263,6 +264,13 @@
       .pkg-options { grid-template-columns:1fr; }
       .apply-wrap { margin:0 0 40px; border-radius:0; }
       .form-body-inner { padding:22px 20px; }
+    }
+    @media(max-width:500px){
+      .gallery-grid { grid-template-columns:1fr; }
+      .gallery-item.wide { grid-column:span 1; aspect-ratio:16/9; }
+      .gallery-item.tall { aspect-ratio:4/3; }
+      .gallery-item { aspect-ratio:4/3; }
+      .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; }
     }
   </style>
 </head>
@@ -404,9 +412,9 @@
       <div class="gallery-grid">
         <div class="gallery-item wide" style="background:#111;border:none;"><img src="img/golf_cart.jpg" alt="Course - Fairway &amp; Bunker" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Golf Course</span></div>
         <div class="gallery-item tall" style="background:#111;border:none;"><img src="img/bar_main.jpg" alt="The Clubhouse Bar" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Clubhouse</span></div>
+        <div class="gallery-item" style="background:#111;border:none;"><img src="img/behind_bar.jpg" alt="Sports Bar" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Bar</span></div>
+        <div class="gallery-item" style="background:#111;border:none;"><img src="img/golf_flag.jpg" alt="The Greens" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Course</span></div>
         <div class="gallery-item" style="background:#111;border:none;"><img src="img/club_nights.jpg" alt="Club Nights" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Events</span></div>
-        <div class="gallery-item"><span class="gallery-icon">🎯</span><span class="gallery-lbl">Bowls Team</span><span class="gallery-tag">Sports</span><span class="gallery-upload">+ Add Photo</span></div>
-        <div class="gallery-item"><span class="gallery-icon">🎱</span><span class="gallery-lbl">Pool Nights</span><span class="gallery-tag">Events</span><span class="gallery-upload">+ Add Photo</span></div>
       </div>
     </div>
   </section>
@@ -636,7 +644,7 @@
         <div class="course-panel">
           <div class="course-stat"><div class="course-stat-lbl">Total Holes</div><div class="course-stat-val">9</div><div class="course-stat-sub">9-Hole Layout</div></div>
           <div class="course-stat"><div class="course-stat-lbl">Location</div><div class="course-stat-val" style="font-size:20px;">Koster</div><div class="course-stat-sub">North-West Province, South Africa</div></div>
-          <div class="course-stat"><div class="course-stat-lbl">Facilities</div><div class="course-stat-val" style="font-size:17px; line-height:1.6;">Clubhouse<br/>Sports Bar<br/>Practice Area</div></div>
+          <div class="course-stat"><div class="course-stat-lbl">Facilities</div><div class="course-stat-val" style="font-size:17px; line-height:1.6;">Clubhouse<br/>Sports Bar</div></div>
           <div class="course-holes-wrap">
             <div class="course-holes-lbl">All 9 Holes</div>
             <div class="holes-grid">
