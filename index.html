@@ -25,6 +25,8 @@
     .nav-cta { background:var(--gold)!important; color:var(--dark-green)!important; font-weight:600!important; }
     .nav-cta:hover { background:#b8933d!important; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
+
+    #lang-toggle:hover { background:rgba(201,168,76,0.15) !important; }
     .hamburger span { display:block; width:22px; height:2px; background:rgba(255,255,255,0.8); border-radius:2px; }
     .page { display:none; }
     .page.active { display:block; }
@@ -264,18 +266,21 @@
     </div>
   </div>
   <ul class="nav-links" id="navLinks">
-    <li><a onclick="navTo('about')">About</a></li>
-    <li><a onclick="navTo('events')">Events</a></li>
-    <li><a onclick="navTo('gallery')">Gallery</a></li>
-    <li><a onclick="navTo('course')">Course</a></li>
-    <li><a onclick="navTo('sponsors')">Sponsors</a></li>
-    <li><a onclick="navTo('carts')">Golf Carts</a></li>
-    <li><a onclick="navTo('feedback')">Feedback</a></li>
-    <li><a onclick="navTo('contact')">Contact</a></li>
-    <li><a class="nav-cta" onclick="showPage('apply')">Become a Sponsor</a></li>
+    <li><a onclick="navTo('about')" data-i18n="nav_about">About</a></li>
+    <li><a onclick="navTo('events')" data-i18n="nav_events">Events</a></li>
+    <li><a onclick="navTo('gallery')" data-i18n="nav_gallery">Gallery</a></li>
+    <li><a onclick="navTo('course')" data-i18n="nav_course">Course</a></li>
+    <li><a onclick="navTo('sponsors')" data-i18n="nav_sponsors">Sponsors</a></li>
+    <li><a onclick="navTo('carts')" data-i18n="nav_carts">Golf Carts</a></li>
+    <li><a onclick="navTo('feedback')" data-i18n="nav_feedback">Feedback</a></li>
+    <li><a onclick="navTo('contact')" data-i18n="nav_contact">Contact</a></li>
+    <li><a class="nav-cta" onclick="showPage('apply')" data-i18n="nav_sponsor_cta">Become a Sponsor</a></li>
+    <li style="display:flex;align-items:center;padding-left:8px;"><button id="lang-toggle" onclick="toggleLang()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(201,168,76,0.45);color:rgba(255,255,255,0.9);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:6px 13px;border-radius:4px;cursor:pointer;text-transform:uppercase;transition:all 0.2s;white-space:nowrap;">🌐 Afrikaans</button></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-  <div class="nav-right-logo" style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" style="height:44px;width:auto;display:block;flex-shrink:0;"><defs><linearGradient id="sgR" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2D6A4F"/><stop offset="50%" style="stop-color:#1B4332"/><stop offset="100%" style="stop-color:#0f2d1a"/></linearGradient><linearGradient id="bgR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f5e88a"/><stop offset="50%" style="stop-color:#C9A84C"/><stop offset="100%" style="stop-color:#9a7a28"/></linearGradient><linearGradient id="sfR" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#c8a83c"/><stop offset="35%" style="stop-color:#f0dc80"/><stop offset="65%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#c8a83c"/></linearGradient><linearGradient id="hdR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#a07820"/></linearGradient><filter id="shR"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/></filter></defs><path d="M100 6 L191 42 L191 128 Q191 188 100 218 Q9 188 9 128 L9 42 Z" fill="url(#bgR)" filter="url(#shR)"/><path d="M100 14 L183 48 L183 128 Q183 183 100 210 Q17 183 17 128 L17 48 Z" fill="url(#sgR)"/><line x1="62" y1="44" x2="146" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/><path d="M134 171 Q146 162 154 165 Q158 170 152 176 Q140 180 132 176 Z" fill="url(#hdR)"/><line x1="138" y1="44" x2="54" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/><path d="M46 165 Q54 159 66 162 Q68 170 60 176 Q48 176 44 170 Z" fill="url(#hdR)"/><circle cx="141" cy="41" r="10" fill="white" opacity="0.93"/><circle cx="141" cy="41" r="10" fill="none" stroke="#C9A84C" stroke-width="1.2"/><g transform="translate(100,120)"><path d="M-2 0 Q-10 -9 -18 -4 Q-16 0 -18 4 Q-10 9 -2 0 Z" fill="#d4b84a"/><path d="M2 0 Q10 -9 18 -4 Q16 0 18 4 Q10 9 2 0 Z" fill="#d4b84a"/><ellipse cx="0" cy="0" rx="6" ry="5" fill="#C9A84C"/></g><path d="M44 183 Q100 175 156 183 L153 197 Q100 205 47 197 Z" fill="#C9A84C"/></svg></div>
+  <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="nav-right-logo" style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" style="height:44px;width:auto;display:block;flex-shrink:0;"><defs><linearGradient id="sgR" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2D6A4F"/><stop offset="50%" style="stop-color:#1B4332"/><stop offset="100%" style="stop-color:#0f2d1a"/></linearGradient><linearGradient id="bgR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f5e88a"/><stop offset="50%" style="stop-color:#C9A84C"/><stop offset="100%" style="stop-color:#9a7a28"/></linearGradient><linearGradient id="sfR" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#c8a83c"/><stop offset="35%" style="stop-color:#f0dc80"/><stop offset="65%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#c8a83c"/></linearGradient><linearGradient id="hdR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f0dc80"/><stop offset="100%" style="stop-color:#a07820"/></linearGradient><filter id="shR"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/></filter></defs><path d="M100 6 L191 42 L191 128 Q191 188 100 218 Q9 188 9 128 L9 42 Z" fill="url(#bgR)" filter="url(#shR)"/><path d="M100 14 L183 48 L183 128 Q183 183 100 210 Q17 183 17 128 L17 48 Z" fill="url(#sgR)"/><line x1="62" y1="44" x2="146" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/><path d="M134 171 Q146 162 154 165 Q158 170 152 176 Q140 180 132 176 Z" fill="url(#hdR)"/><line x1="138" y1="44" x2="54" y2="168" stroke="url(#sfR)" stroke-width="5.5" stroke-linecap="round"/><path d="M46 165 Q54 159 66 162 Q68 170 60 176 Q48 176 44 170 Z" fill="url(#hdR)"/><circle cx="141" cy="41" r="10" fill="white" opacity="0.93"/><circle cx="141" cy="41" r="10" fill="none" stroke="#C9A84C" stroke-width="1.2"/><g transform="translate(100,120)"><path d="M-2 0 Q-10 -9 -18 -4 Q-16 0 -18 4 Q-10 9 -2 0 Z" fill="#d4b84a"/><path d="M2 0 Q10 -9 18 -4 Q16 0 18 4 Q10 9 2 0 Z" fill="#d4b84a"/><ellipse cx="0" cy="0" rx="6" ry="5" fill="#C9A84C"/></g><path d="M44 183 Q100 175 156 183 L153 197 Q100 205 47 197 Z" fill="#C9A84C"/></svg></div>
+  </div>
 </nav>
 
 <div id="page-main" class="page active">
@@ -283,17 +288,17 @@
     <div class="hero-bg"></div>
     <div class="hero-ring hero-ring-1"></div><div class="hero-ring hero-ring-2"></div><div class="hero-ring hero-ring-3"></div>
     <div class="hero-content">
-      <div class="hero-badge">&#9971; Established &middot; Koster, North-West Province</div>
+      <div class="hero-badge"><span data-i18n="hero_badge">&#9971; Established &middot; Koster, North-West Province</span></div>
       <h1>KOSTER<br/><em>Golf Club</em></h1>
-      <p class="hero-sub">Where fairways meet community &nbsp;&middot;&nbsp; 9 Holes &nbsp;&middot;&nbsp; Sports Club &nbsp;&middot;&nbsp; Bar</p>
+      <p class="hero-sub" data-i18n="hero_sub">Where fairways meet community &nbsp;&middot;&nbsp; 9 Holes &nbsp;&middot;&nbsp; Sports Club &nbsp;&middot;&nbsp; Bar</p>
       <div class="hero-stats">
-        <div><span class="stat-num">9</span><span class="stat-label">Holes</span></div>
-        <div><span class="stat-num">&#9971;</span><span class="stat-label">Golf</span></div>
-        <div><span class="stat-num">4+</span><span class="stat-label">Activities</span></div>
+        <div><span class="stat-num">9</span><span class="stat-label" data-i18n="stat_holes">Holes</span></div>
+        <div><span class="stat-num">&#9971;</span><span class="stat-label" data-i18n="stat_golf">Golf</span></div>
+        <div><span class="stat-num">4+</span><span class="stat-label" data-i18n="stat_activities">Activities</span></div>
       </div>
       <div class="hero-btns">
-        <a class="btn-primary" onclick="navTo('about')">Discover the Club</a>
-        <a class="btn-secondary" onclick="showPage('apply')">Become a Sponsor</a>
+        <a class="btn-primary" onclick="navTo('about')" data-i18n="hero_btn1">Discover the Club</a>
+        <a class="btn-secondary" onclick="showPage('apply')" data-i18n="hero_btn2">Become a Sponsor</a>
       </div>
     </div>
     <div class="hero-scroll">Scroll</div>
@@ -303,19 +308,19 @@
     <div class="section-inner">
       <div class="about-grid">
         <div class="about-text">
-          <div class="section-label">About Us</div>
-          <h2 class="section-title">More Than Just a Golf Club</h2>
+          <div class="section-label" data-i18n="about_label">About Us</div>
+          <h2 class="section-title" data-i18n="about_title">More Than Just a Golf Club</h2>
           <div class="section-divider"></div>
-          <p>Koster Golf Club is a proud, community-driven sporting hub nestled in the heart of Koster, North-West Province. We are far more than a 9-hole golf course &mdash; we are a gathering place that brings the whole community together.</p>
-          <p>From our vibrant sports bar to our competitive Bowls team, from Saturday morning parkruns to Wednesday evening joker draws and pool nights &mdash; there is always something happening at Koster Golf Club for everyone.</p>
-          <p>We are committed to growing the sport at grassroots level, supporting youth development, and creating a welcoming environment for players, families, and visitors alike.</p>
-          <div class="owner-badge"><span class="owner-badge-icon">&#127947;</span><div class="owner-badge-text"><strong>Koos Reed</strong>Owner &amp; Club Manager</div></div>
+          <p data-i18n="about_p1">Koster Golf Club is a proud, community-driven sporting hub nestled in the heart of Koster, North-West Province. We are far more than a 9-hole golf course &mdash; we are a gathering place that brings the whole community together.</p>
+          <p data-i18n="about_p2">From our vibrant sports bar to our competitive Bowls team, from Saturday morning parkruns to Wednesday evening joker draws and pool nights &mdash; there is always something happening at Koster Golf Club for everyone.</p>
+          <p data-i18n="about_p3">We are committed to growing the sport at grassroots level, supporting youth development, and creating a welcoming environment for players, families, and visitors alike.</p>
+          <div class="owner-badge"><span class="owner-badge-icon">&#127947;</span><div class="owner-badge-text"><strong>Koos Reed</strong><span data-i18n="about_owner_role">Owner &amp; Club Manager</span></div></div>
         </div>
         <div class="highlights">
-          <div class="highlight"><span class="highlight-icon">&#9971;</span><div><div class="highlight-title">9-Hole Golf Course</div><div class="highlight-desc">A full 9-hole course beautifully maintained in the North-West landscape, welcoming golfers of all skill levels.</div></div></div>
-          <div class="highlight"><span class="highlight-icon">&#127866;</span><div><div class="highlight-title">Sports Club &amp; Bar</div><div class="highlight-desc">Relax in our full-service sports club and bar &mdash; the perfect spot after a great round or a big game night.</div></div></div>
-          <div class="highlight"><span class="highlight-icon">&#127919;</span><div><div class="highlight-title">Bowls Team</div><div class="highlight-desc">Our competitive Bowls team represents Koster with pride at regional level. Come show your support!</div></div></div>
-          <div class="highlight"><span class="highlight-icon">&#127757;</span><div><div class="highlight-title">Community First</div><div class="highlight-desc">We actively support youth development, healthy living, and social engagement throughout North-West Province.</div></div></div>
+          <div class="highlight"><span class="highlight-icon">&#9971;</span><div><div class="highlight-title" data-i18n="hl1_title">9-Hole Golf Course</div><div class="highlight-desc" data-i18n="hl1_desc">A full 9-hole course beautifully maintained in the North-West landscape, welcoming golfers of all skill levels.</div></div></div>
+          <div class="highlight"><span class="highlight-icon">&#127866;</span><div><div class="highlight-title" data-i18n="hl2_title">Sports Club &amp; Bar</div><div class="highlight-desc" data-i18n="hl2_desc">Relax in our full-service sports club and bar &mdash; the perfect spot after a great round or a big game night.</div></div></div>
+          <div class="highlight"><span class="highlight-icon">&#127919;</span><div><div class="highlight-title" data-i18n="hl3_title">Bowls Team</div><div class="highlight-desc" data-i18n="hl3_desc">Our competitive Bowls team represents Koster with pride at regional level. Come show your support!</div></div></div>
+          <div class="highlight"><span class="highlight-icon">&#127757;</span><div><div class="highlight-title" data-i18n="hl4_title">Community First</div><div class="highlight-desc" data-i18n="hl4_desc">We actively support youth development, healthy living, and social engagement throughout North-West Province.</div></div></div>
         </div>
       </div>
     </div>
@@ -323,24 +328,24 @@
 
   <section id="events">
     <div class="section-inner">
-      <div class="section-label">What's On</div>
-      <h2 class="section-title" style="color:white;">Club Events &amp; Activities</h2>
+      <div class="section-label" data-i18n="events_label">What's On</div>
+      <h2 class="section-title" style="color:white;" data-i18n="events_title">Club Events &amp; Activities</h2>
       <div class="section-divider"></div>
       <div class="events-grid">
-        <div class="event-card"><span class="event-icon">&#127919;</span><div class="event-name">Bowls Team</div><span class="event-when">&#127942; Competitive Team</span><p class="event-desc">Koster Golf Club fields a proud Bowls team representing our community at regional competitions.</p></div>
-        <div class="event-card"><span class="event-icon">&#127939;</span><div class="event-name">Parkrun</div><span class="event-when">&#128197; Every Saturday Morning</span><p class="event-desc">Join our free weekly 5km Parkrun every Saturday morning. All ages, all paces &mdash; everyone is welcome!</p></div>
-        <div class="event-card"><span class="event-icon">&#127183;</span><div class="event-name">Joker Draw</div><span class="event-when">&#128197; Every Wednesday</span><p class="event-desc">Try your luck at our wildly popular Wednesday Joker Draw! A Koster tradition that keeps on growing every week.</p></div>
-        <div class="event-card"><span class="event-icon">&#127921;</span><div class="event-name">Pool Nights</div><span class="event-when">&#128197; Saturday &amp; Wednesday</span><p class="event-desc">Challenge your friends or make new ones at our Pool Nights every Saturday and Wednesday evening.</p></div>
+        <div class="event-card"><span class="event-icon">&#127919;</span><div class="event-name" data-i18n="ev1_name">Bowls Team</div><span class="event-when">&#127942; Competitive Team</span><p class="event-desc" data-i18n="ev1_desc">Koster Golf Club fields a proud Bowls team representing our community at regional competitions.</p></div>
+        <div class="event-card"><span class="event-icon">&#127939;</span><div class="event-name" data-i18n="ev2_name">Parkrun</div><span class="event-when">&#128197; Every Saturday Morning</span><p class="event-desc">Join our free weekly 5km Parkrun every Saturday morning. All ages, all paces &mdash; everyone is welcome!</p></div>
+        <div class="event-card"><span class="event-icon">&#127183;</span><div class="event-name" data-i18n="ev3_name">Joker Draw</div><span class="event-when">&#128197; Every Wednesday</span><p class="event-desc" data-i18n="ev3_desc">Try your luck at our wildly popular Wednesday Joker Draw! A Koster tradition that keeps on growing every week.</p></div>
+        <div class="event-card"><span class="event-icon">&#127921;</span><div class="event-name" data-i18n="ev4_name">Pool Nights</div><span class="event-when">&#128197; Saturday &amp; Wednesday</span><p class="event-desc" data-i18n="ev4_desc">Challenge your friends or make new ones at our Pool Nights every Saturday and Wednesday evening.</p></div>
       </div>
     </div>
   </section>
 
   <section id="gallery">
     <div class="section-inner">
-      <div class="section-label">Gallery</div>
-      <h2 class="section-title">Club Photos</h2>
+      <div class="section-label" data-i18n="gallery_label">Gallery</div>
+      <h2 class="section-title" data-i18n="gallery_title">Club Photos</h2>
       <div class="section-divider"></div>
-      <p class="gallery-intro">A glimpse into our beautiful course, vibrant sports bar, and the community spirit that makes Koster Golf Club so special.</p>
+      <p class="gallery-intro" data-i18n="gallery_intro">A glimpse into our beautiful course, vibrant sports bar, and the community spirit that makes Koster Golf Club so special.</p>
       <div class="gallery-grid">
         <div class="gallery-item wide" style="background:#111;border:none;"><img src="img/golf_cart.jpg" alt="Course" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Golf Course</span></div>
         <div class="gallery-item tall" style="background:#111;border:none;"><img src="img/bar_main.jpg" alt="Bar" style="width:100%;height:100%;object-fit:cover;display:block;"/><span class="gallery-tag">Clubhouse</span></div>
@@ -353,21 +358,21 @@
 
   <section id="sponsors">
     <div class="section-inner">
-      <div class="section-label">Our Partners</div>
-      <h2 class="section-title">Club Sponsors</h2>
+      <div class="section-label" data-i18n="sponsors_label">Our Partners</div>
+      <h2 class="section-title" data-i18n="sponsors_title">Club Sponsors</h2>
       <div class="section-divider"></div>
-      <p class="sponsors-intro">We are grateful for every business and organisation that supports Koster Golf Club. Sponsorship spots are available &mdash; become part of our journey.</p>
+      <p class="sponsors-intro" data-i18n="sponsors_intro">We are grateful for every business and organisation that supports Koster Golf Club. Sponsorship spots are available &mdash; become part of our journey.</p>
       <div class="sponsors-tiers">
         <div><div class="tier-label">&#127941; Platinum Sponsors</div><div class="sponsor-row"><div class="sponsor-slot platinum"><span class="sponsor-slot-ico">&#127941;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot platinum"><span class="sponsor-slot-ico">&#127941;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot platinum"><span class="sponsor-slot-ico">&#127941;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot platinum"><span class="sponsor-slot-ico">&#127941;</span><span class="sponsor-slot-txt">Your Brand Here</span></div></div></div>
         <div><div class="tier-label">&#129352; Gold Sponsors</div><div class="sponsor-row"><div class="sponsor-slot gold-tier"><span class="sponsor-slot-ico">&#129352;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot gold-tier"><span class="sponsor-slot-ico">&#129352;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot gold-tier"><span class="sponsor-slot-ico">&#129352;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot gold-tier"><span class="sponsor-slot-ico">&#129352;</span><span class="sponsor-slot-txt">Your Brand Here</span></div></div></div>
         <div><div class="tier-label">&#129353; Silver Sponsors</div><div class="sponsor-row"><div class="sponsor-slot"><span class="sponsor-slot-ico">&#129353;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot"><span class="sponsor-slot-ico">&#129353;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot"><span class="sponsor-slot-ico">&#129353;</span><span class="sponsor-slot-txt">Your Brand Here</span></div><div class="sponsor-slot"><span class="sponsor-slot-ico">&#129353;</span><span class="sponsor-slot-txt">Your Brand Here</span></div></div></div>
       </div>
       <div class="sponsors-cta">
-        <h3>Partner with Koster Golf Club</h3>
-        <p>Position your brand alongside sport, community pride, and local development in the North-West Province.</p>
+        <h3 data-i18n="sp_cta_h3">Partner with Koster Golf Club</h3>
+        <p data-i18n="sp_cta_p">Position your brand alongside sport, community pride, and local development in the North-West Province.</p>
         <div class="sponsors-cta-btns">
-          <button class="btn-primary" onclick="showPage('apply')">Apply to Sponsor</button>
-          <button class="btn-secondary" onclick="showPage('sponsorship')">View Sponsorship Packages</button>
+          <button class="btn-primary" onclick="showPage('apply')" data-i18n="sp_btn1">Apply to Sponsor</button>
+          <button class="btn-secondary" onclick="showPage('sponsorship')" data-i18n="sp_btn2">View Sponsorship Packages</button>
         </div>
       </div>
     </div>
@@ -375,8 +380,8 @@
 
   <section id="course">
     <div class="section-inner">
-      <div class="section-label">The Course</div>
-      <h2 class="section-title">9-Hole Course Layout</h2>
+      <div class="section-label" data-i18n="course_label">The Course</div>
+      <h2 class="section-title" data-i18n="course_title">9-Hole Course Layout</h2>
       <div class="section-divider"></div>
       <div class="course-layout">
 
@@ -512,11 +517,11 @@
         </div>
 
         <div class="course-panel">
-          <div class="course-stat"><div class="course-stat-lbl">Total Holes</div><div class="course-stat-val">9</div><div class="course-stat-sub">9-Hole Layout</div></div>
+          <div class="course-stat"><div class="course-stat-lbl" data-i18n="course_stat_holes_lbl">Total Holes</div><div class="course-stat-val">9</div><div class="course-stat-sub" data-i18n="course_stat_holes_sub">9-Hole Layout</div></div>
           <div class="course-stat"><div class="course-stat-lbl">Location</div><div class="course-stat-val" style="font-size:20px;">Koster</div><div class="course-stat-sub">North-West Province, South Africa</div></div>
-          <div class="course-stat"><div class="course-stat-lbl">Facilities</div><div class="course-stat-val" style="font-size:17px;line-height:1.6;">Clubhouse<br/>Sports Bar</div></div>
+          <div class="course-stat"><div class="course-stat-lbl" data-i18n="course_stat_fac_lbl">Facilities</div><div class="course-stat-val" style="font-size:17px;line-height:1.6;">Clubhouse<br/>Sports Bar</div></div>
           <div class="course-holes-wrap">
-            <div class="course-holes-lbl">All 9 Holes</div>
+            <div class="course-holes-lbl" data-i18n="course_holes_lbl">All 9 Holes</div>
             <div class="holes-grid">
               <div class="hole-n">1</div><div class="hole-n">2</div><div class="hole-n">3</div>
               <div class="hole-n">4</div><div class="hole-n">5</div><div class="hole-n">6</div>
@@ -531,16 +536,16 @@
 
   <section id="contact">
     <div class="section-inner">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Contact Us</h2>
+      <div class="section-label" data-i18n="contact_label">Get In Touch</div>
+      <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
       <div class="section-divider"></div>
       <div class="contact-grid">
-        <div class="contact-card"><div class="contact-avatar">&#128105;</div><div class="contact-name">Azel</div><div class="contact-role">Club Contact</div><a href="tel:0724108960" class="contact-phone">&#128222; 072 410 8960</a></div>
-        <div class="contact-card"><div class="contact-avatar">&#128105;</div><div class="contact-name">Hannetjie</div><div class="contact-role">Club Contact</div><a href="tel:0769163960" class="contact-phone">&#128222; 076 916 3960</a></div>
+        <div class="contact-card"><div class="contact-avatar">&#128105;</div><div class="contact-name">Azel</div><div class="contact-role" data-i18n="contact_role">Club Contact</div><a href="tel:0724108960" class="contact-phone">&#128222; 072 410 8960</a></div>
+        <div class="contact-card"><div class="contact-avatar">&#128105;</div><div class="contact-name">Hannetjie</div><div class="contact-role" data-i18n="contact_role">Club Contact</div><a href="tel:0769163960" class="contact-phone">&#128222; 076 916 3960</a></div>
         <div class="contact-info-bar">
-          <div><div class="cib-icon">&#128205;</div><div class="cib-label">Location</div><div class="cib-value">Koster, North-West Province<br/>South Africa</div></div>
-          <div><div class="cib-icon">&#127947;</div><div class="cib-label">Owner / Manager</div><div class="cib-value">Koos Reed</div></div>
-          <div><div class="cib-icon">&#128197;</div><div class="cib-label">Regular Activities</div><div class="cib-value">Parkrun: Sat &middot; Joker Draw: Wed<br/>Pool Nights: Sat &amp; Wed</div></div>
+          <div><div class="cib-icon">&#128205;</div><div class="cib-label" data-i18n="contact_loc_lbl">Location</div><div class="cib-value" data-i18n="contact_location_val">Koster, North-West Province<br/>South Africa</div></div>
+          <div><div class="cib-icon">&#127947;</div><div class="cib-label" data-i18n="contact_owner_lbl">Owner / Manager</div><div class="cib-value">Koos Reed</div></div>
+          <div><div class="cib-icon">&#128197;</div><div class="cib-label" data-i18n="contact_act_lbl">Regular Activities</div><div class="cib-value" data-i18n="contact_activities1">Parkrun: Sat &middot; Joker Draw: Wed<br/ data-i18n="contact_activities2">Pool Nights: Sat &amp; Wed</div></div>
         </div>
       </div>
     </div>
@@ -548,23 +553,23 @@
 
   <section id="carts" style="background:var(--pale-green);">
     <div class="section-inner">
-      <div class="section-label">On-Course Transport</div>
-      <h2 class="section-title">Golf Carts</h2>
+      <div class="section-label" data-i18n="carts_label">On-Course Transport</div>
+      <h2 class="section-title" data-i18n="carts_title">Golf Carts</h2>
       <div class="section-divider"></div>
       <div class="about-grid" style="align-items:center;gap:40px;">
         <div>
-          <p style="font-size:16px;line-height:1.8;color:#444;margin-bottom:18px;">Enjoy your round in comfort with one of our golf carts. Carts are available for hire and make getting around the course quick, easy, and enjoyable &mdash; especially on a hot North-West day.</p>
+          <p style="font-size:16px;line-height:1.8;color:#444;margin-bottom:18px;" data-i18n="carts_p1">Enjoy your round in comfort with one of our golf carts. Carts are available for hire and make getting around the course quick, easy, and enjoyable &mdash; especially on a hot North-West day.</p>
           <div style="background:white;border-radius:8px;padding:24px 28px;border-left:4px solid var(--gold);margin-bottom:20px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">&#9888; Important &mdash; Book in Advance</div>
-            <p style="font-size:15px;color:#444;line-height:1.75;margin:0;">Golf carts are in high demand, especially over weekends and public holidays. <strong>Please book your cart before arriving at the club</strong> to avoid disappointment. Walk-in availability cannot be guaranteed.</p>
+            <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;" data-i18n="carts_warn_title">&#9888; Important &mdash; Book in Advance</div>
+            <p style="font-size:15px;color:#444;line-height:1.75;margin:0;" data-i18n="carts_warn_p">Golf carts are in high demand, especially over weekends and public holidays. <strong>Please book your cart before arriving at the club</strong> to avoid disappointment. Walk-in availability cannot be guaranteed.</p>
           </div>
-          <p style="font-size:15px;color:#666;line-height:1.7;margin-top:16px;">To book a cart, contact the club directly on <strong>072 410 8960</strong> (Azel) or <strong>076 916 3960</strong> (Hannetjie).</p>
+          <p style="font-size:15px;color:#666;line-height:1.7;margin-top:16px;" data-i18n="carts_book_p">To book a cart, contact the club directly on <strong>072 410 8960</strong> (Azel) or <strong>076 916 3960</strong> (Hannetjie).</p>
         </div>
         <div style="background:var(--dark-green);border-radius:10px;padding:32px;color:white;text-align:center;">
           <div style="font-size:64px;margin-bottom:16px;">&#127947;</div>
-          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--light-gold);margin-bottom:8px;">Ride the Course</div>
-          <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:20px;">Carts available for 9-hole rounds. Limited units &mdash; first booked, first served.</p>
-          <div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:18px;font-size:13px;color:rgba(255,255,255,0.55);">Contact the club to check availability &amp; pricing</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--light-gold);margin-bottom:8px;" data-i18n="carts_ride">Ride the Course</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:20px;" data-i18n="carts_avail">Carts available for 9-hole rounds. Limited units &mdash; first booked, first served.</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:18px;font-size:13px;color:rgba(255,255,255,0.55);" data-i18n="carts_contact_note">Contact the club to check availability &amp; pricing</div>
         </div>
       </div>
     </div>
@@ -572,30 +577,30 @@
 
   <section id="feedback" style="background:#f9f7f2;">
     <div class="section-inner">
-      <div class="section-label">Have Your Say</div>
-      <h2 class="section-title">Complaints &amp; Suggestions</h2>
+      <div class="section-label" data-i18n="feedback_label">Have Your Say</div>
+      <h2 class="section-title" data-i18n="feedback_title">Complaints &amp; Suggestions</h2>
       <div class="section-divider"></div>
       <div class="about-grid" style="gap:40px;align-items:start;">
         <div>
-          <p style="font-size:15.5px;color:#555;line-height:1.8;margin-bottom:20px;">We take every complaint and suggestion seriously. Your feedback goes directly to management and helps us improve Koster Golf Club for everyone.</p>
+          <p style="font-size:15.5px;color:#555;line-height:1.8;margin-bottom:20px;" data-i18n="feedback_p1">We take every complaint and suggestion seriously. Your feedback goes directly to management and helps us improve Koster Golf Club for everyone.</p>
           <div style="background:var(--dark-green);color:white;border-radius:8px;padding:22px 24px;margin-bottom:16px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">&#128274; Your Privacy</div>
-            <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.7;margin:0;">All complaints and suggestions are treated as <strong style="color:white;">strictly confidential</strong>. Your name and contact number are required so management can follow up &mdash; this information will <strong style="color:white;">never be shared</strong> with other members or staff.</p>
+            <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;" data-i18n="feedback_priv_title">&#128274; Your Privacy</div>
+            <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.7;margin:0;" data-i18n="feedback_priv_p">All complaints and suggestions are treated as <strong style="color:white;">strictly confidential</strong>. Your name and contact number are required so management can follow up &mdash; this information will <strong style="color:white;">never be shared</strong> with other members or staff.</p>
           </div>
           <div style="background:#fff8e1;border:1px solid var(--gold);border-radius:8px;padding:18px 22px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8860b;margin-bottom:8px;">&#9888; Anonymous submissions not accepted</div>
-            <p style="font-size:13.5px;color:#666;line-height:1.65;margin:0;">As per club policy, complaints without a name and contact number will not be reviewed by the manager.</p>
+            <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8860b;margin-bottom:8px;" data-i18n="feedback_anon_title">&#9888; Anonymous submissions not accepted</div>
+            <p style="font-size:13.5px;color:#666;line-height:1.65;margin:0;" data-i18n="feedback_anon_p">As per club policy, complaints without a name and contact number will not be reviewed by the manager.</p>
           </div>
         </div>
         <div>
           <form action="https://formspree.io/f/xykngnal" method="POST" style="background:white;border-radius:10px;padding:30px;box-shadow:0 2px 18px rgba(0,0,0,0.07);">
             <input type="hidden" name="_subject" value="Koster Golf Club - Complaint / Suggestion">
-            <div style="margin-bottom:16px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;">Full Name *</label><input type="text" name="name" required placeholder="Your full name" style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;"></div>
-            <div style="margin-bottom:16px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;">Contact Number *</label><input type="tel" name="phone" required placeholder="e.g. 072 000 0000" style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;"></div>
-            <div style="margin-bottom:16px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;">Type</label><select name="type" style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;background:white;"><option value="Complaint">Complaint</option><option value="Suggestion">Suggestion / Improvement</option><option value="Compliment">Compliment</option><option value="Other">Other</option></select></div>
-            <div style="margin-bottom:22px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;">Your Message *</label><textarea name="message" required rows="5" placeholder="Please describe your complaint, suggestion, or tip in as much detail as possible..." style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;resize:vertical;"></textarea></div>
+            <div style="margin-bottom:16px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;" data-i18n="feedback_name_lbl">Full Name *</label><input type="text" name="name" required placeholder="Your full name" style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;"></div>
+            <div style="margin-bottom:16px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;" data-i18n="feedback_phone_lbl">Contact Number *</label><input type="tel" name="phone" required placeholder="e.g. 072 000 0000" style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;"></div>
+            <div style="margin-bottom:16px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;" data-i18n="feedback_type_lbl">Type</label><select name="type" style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;background:white;"><option value="Complaint">Complaint</option><option value="Suggestion">Suggestion / Improvement</option><option value="Compliment">Compliment</option><option value="Other">Other</option></select></div>
+            <div style="margin-bottom:22px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark-green);margin-bottom:6px;" data-i18n="feedback_msg_lbl">Your Message *</label><textarea name="message" required rows="5" placeholder="Please describe your complaint, suggestion, or tip in as much detail as possible..." style="width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;font-family:inherit;resize:vertical;"></textarea></div>
             <div style="background:#f5f5f5;border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:12.5px;color:#777;line-height:1.6;">&#10003; By submitting this form you confirm that your details will be kept confidential and used solely for management follow-up purposes.</div>
-            <button type="submit" style="width:100%;background:var(--dark-green);color:white;border:none;padding:14px;border-radius:6px;font-size:15px;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:inherit;">Submit to Management &#x2192;</button>
+            <button type="submit" style="width:100%;background:var(--dark-green);color:white;border:none;padding:14px;border-radius:6px;font-size:15px;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:inherit;" data-i18n="feedback_submit">Submit to Management &#x2192;</button>
           </form>
         </div>
       </div>
@@ -607,24 +612,24 @@
       <div class="footer-top">
         <div>
           <div class="footer-brand">&#9971; Koster Golf Club</div>
-          <p class="footer-desc">A community-driven golf and sports club in the heart of Koster, North-West Province. 9 holes, a sports bar, Bowls team, parkrun, joker draws, and pool nights &mdash; something for everyone.</p>
+          <p class="footer-desc" data-i18n="footer_desc">A community-driven golf and sports club in the heart of Koster, North-West Province. 9 holes, a sports bar, Bowls team, parkrun, joker draws, and pool nights &mdash; something for everyone.</p>
         </div>
         <div>
-          <div class="footer-col-title">Explore</div>
+          <div class="footer-col-title" data-i18n="footer_explore">Explore</div>
           <ul class="footer-links">
-            <li><a onclick="navTo('about')">About the Club</a></li>
-            <li><a onclick="navTo('events')">Events &amp; Activities</a></li>
-            <li><a onclick="navTo('gallery')">Gallery</a></li>
-            <li><a onclick="navTo('course')">The Course</a></li>
-            <li><a onclick="navTo('contact')">Contact</a></li>
+            <li><a onclick="navTo('about')" data-i18n="footer_about">About the Club</a></li>
+            <li><a onclick="navTo('events')" data-i18n="footer_events">Events &amp; Activities</a></li>
+            <li><a onclick="navTo('gallery')" data-i18n="nav_gallery">Gallery</a></li>
+            <li><a onclick="navTo('course')" data-i18n="footer_course">The Course</a></li>
+            <li><a onclick="navTo('contact')" data-i18n="nav_contact">Contact</a></li>
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Sponsorship</div>
+          <div class="footer-col-title" data-i18n="footer_sponsorship">Sponsorship</div>
           <ul class="footer-links">
-            <li><a onclick="showPage('sponsorship')">Sponsorship Proposal</a></li>
-            <li><a onclick="showPage('apply')">Apply to Sponsor</a></li>
-            <li><a onclick="navTo('sponsors')">Current Sponsors</a></li>
+            <li><a onclick="showPage('sponsorship')" data-i18n="footer_sp_proposal">Sponsorship Proposal</a></li>
+            <li><a onclick="showPage('apply')" data-i18n="footer_sp_apply">Apply to Sponsor</a></li>
+            <li><a onclick="navTo('sponsors')" data-i18n="footer_sp_current">Current Sponsors</a></li>
           </ul>
           <div style="margin-top:22px;">
             <div class="footer-col-title">Contact</div>
@@ -750,6 +755,223 @@
     document.body.appendChild(a); a.click();
     document.body.removeChild(a);
   }
+
+  // ========== LANGUAGE SYSTEM ==========
+  let currentLang = 'en';
+  const translations = {
+    en: {
+      nav_about: 'About',
+      nav_events: 'Events',
+      nav_gallery: 'Gallery',
+      nav_course: 'Course',
+      nav_sponsors: 'Sponsors',
+      nav_carts: 'Golf Carts',
+      nav_feedback: 'Feedback',
+      nav_contact: 'Contact',
+      nav_sponsor_cta: 'Become a Sponsor',
+      hero_badge: '⛳ Established · Koster, North-West Province',
+      hero_sub: 'Where fairways meet community &nbsp;·&nbsp; 9 Holes &nbsp;·&nbsp; Sports Club &nbsp;·&nbsp; Bar',
+      stat_holes: 'Holes',
+      stat_golf: 'Golf',
+      stat_activities: 'Activities',
+      hero_btn1: 'Discover the Club',
+      hero_btn2: 'Become a Sponsor',
+      about_label: 'About Us',
+      about_title: 'More Than Just a Golf Club',
+      about_p1: 'Koster Golf Club is a proud, community-driven sporting hub nestled in the heart of Koster, North-West Province. We are far more than an 9-hole golf course — we are a gathering place that brings the whole community together.',
+      about_p2: 'From our vibrant sports bar to our competitive Bowls team, from Saturday morning parkruns to Wednesday evening joker draws and pool nights — there is always something happening at Koster Golf Club for everyone.',
+      about_p3: 'We are committed to growing the sport at grassroots level, supporting youth development, and creating a welcoming environment for players, families, and visitors alike.',
+      about_owner_role: 'Owner &amp; Club Manager',
+      hl1_title: '9-Hole Golf Course',
+      hl1_desc: 'A full 9-hole course beautifully maintained in the North-West landscape, welcoming golfers of all skill levels.',
+      hl2_title: 'Sports Club &amp; Bar',
+      hl2_desc: 'Relax in our full-service sports club and bar — the perfect spot after a great round or a big game night.',
+      hl3_title: 'Bowls Team',
+      hl3_desc: 'Our competitive Bowls team represents Koster with pride at regional level. Come show your support!',
+      hl4_title: 'Community First',
+      hl4_desc: 'We actively support youth development, healthy living, and social engagement throughout North-West Province.',
+      events_label: "What's On",
+      events_title: 'Club Events &amp; Activities',
+      ev1_name: 'Bowls Team',
+      ev1_desc: 'Koster Golf Club fields a proud Bowls team representing our community at regional competitions.',
+      ev2_name: 'Parkrun',
+      ev2_desc: 'Join our free weekly 5km Parkrun every Saturday morning. All ages, all paces — everyone is welcome!',
+      ev3_name: 'Joker Draw',
+      ev3_desc: 'Try your luck at our wildly popular Wednesday Joker Draw! A Koster tradition that keeps on growing every week.',
+      ev4_name: 'Pool Nights',
+      ev4_desc: 'Challenge your friends or make new ones at our Pool Nights every Saturday and Wednesday evening.',
+      gallery_label: 'Gallery',
+      gallery_title: 'Club Photos',
+      gallery_intro: 'A glimpse into our beautiful course, vibrant sports bar, and the community spirit that makes Koster Golf Club so special.',
+      sponsors_label: 'Our Partners',
+      sponsors_title: 'Club Sponsors',
+      sponsors_intro: 'We are grateful for every business and organisation that supports Koster Golf Club. Sponsorship spots are available — become part of our journey.',
+      sp_cta_h3: 'Partner with Koster Golf Club',
+      sp_cta_p: 'Position your brand alongside sport, community pride, and local development in the North-West Province.',
+      sp_btn1: 'Apply to Sponsor',
+      sp_btn2: 'View Sponsorship Packages',
+      course_label: 'The Course',
+      course_title: '9-Hole Course Layout',
+      carts_label: 'On-Course Transport',
+      carts_title: 'Golf Carts',
+      feedback_label: 'Have Your Say',
+      feedback_title: 'Complaints &amp; Suggestions',
+      contact_label: 'Get In Touch',
+      contact_title: 'Contact Us',
+      contact_role: 'Club Contact',
+      carts_p1: 'Enjoy your round in comfort with one of our golf carts. Carts are available for hire and make getting around the course quick, easy, and enjoyable &mdash; especially on a hot North-West day.',
+      carts_warn_title: '&#9888; Important &mdash; Book in Advance',
+      carts_warn_p: 'Golf carts are in high demand, especially over weekends and public holidays. <strong>Please book your cart before arriving at the club</strong> to avoid disappointment. Walk-in availability cannot be guaranteed.',
+      carts_book_p: 'To book a cart, contact the club directly on <strong>072 410 8960</strong> (Azel) or <strong>076 916 3960</strong> (Hannetjie).',
+      carts_ride: 'Ride the Course',
+      carts_avail: 'Carts available for 9-hole rounds. Limited units &mdash; first booked, first served.',
+      carts_contact_note: 'Contact the club to check availability &amp; pricing',
+      feedback_p1: 'We take every complaint and suggestion seriously. Your feedback goes directly to management and helps us improve Koster Golf Club for everyone.',
+      feedback_priv_title: '&#128274; Your Privacy',
+      feedback_priv_p: 'All complaints and suggestions are treated as <strong style="color:white;">strictly confidential</strong>. Your name and contact number are required so management can follow up — this information will <strong style="color:white;">never be shared</strong> with other members or staff.',
+      feedback_anon_title: '&#9888; Anonymous submissions not accepted',
+      feedback_anon_p: 'As per club policy, complaints without a name and contact number will not be reviewed by the manager. Please complete all required fields.',
+      feedback_name_lbl: 'Full Name *',
+      feedback_phone_lbl: 'Contact Number *',
+      feedback_type_lbl: 'Type',
+      feedback_msg_lbl: 'Your Message *',
+      feedback_submit: 'Submit to Management →',
+      contact_loc_lbl: 'Location',
+      contact_location_val: 'Koster, North-West Province<br/>South Africa',
+      contact_owner_lbl: 'Owner / Manager',
+      contact_act_lbl: 'Regular Activities',
+      contact_activities1: 'Parkrun: Sat &middot; Joker Draw: Wed',
+      contact_activities2: 'Pool Nights: Sat &amp; Wed',
+      footer_desc: 'A community-driven golf and sports club in the heart of Koster, North-West Province. 9 holes, a sports bar, Bowls team, parkrun, joker draws, and pool nights &mdash; something for everyone.',
+      footer_explore: 'Explore',
+      footer_about: 'About the Club',
+      footer_events: 'Events &amp; Activities',
+      footer_course: 'The Course',
+      footer_sponsorship: 'Sponsorship',
+      footer_sp_proposal: 'Sponsorship Proposal',
+      footer_sp_apply: 'Apply to Sponsor',
+      footer_sp_current: 'Current Sponsors',
+      course_stat_holes_lbl: 'Total Holes',
+      course_stat_holes_sub: '9-Hole Layout',
+      course_stat_fac_lbl: 'Facilities',
+      course_holes_lbl: 'All 9 Holes',
+    },
+    af: {
+      nav_about: "Oor Ons",
+      nav_events: "Geleenthede",
+      nav_gallery: "Galery",
+      nav_course: "Baan",
+      nav_sponsors: "Borge",
+      nav_carts: "Gholfkarretjies",
+      nav_feedback: "Terugvoer",
+      nav_contact: "Kontak",
+      nav_sponsor_cta: "Word 'n Borg",
+      hero_badge: "⛳ Gestig · Koster, Noordwes-Provinsie",
+      hero_sub: "Waar gholfbane gemeenskap ontmoet &nbsp;·&nbsp; 9 Gate &nbsp;·&nbsp; Sportklub &nbsp;·&nbsp; Kroeg",
+      stat_holes: "Gate",
+      stat_golf: "Gholf",
+      stat_activities: "Aktiwiteite",
+      hero_btn1: "Ontdek die Klub",
+      hero_btn2: "Word 'n Borg",
+      about_label: "Oor Ons",
+      about_title: "Meer as Net 'n Gholfklub",
+      about_p1: "Koster Gholfklub is 'n trotse, gemeenskapsgedrewe sportkompleks geleë in die hart van Koster, Noordwes-Provinsie. Ons is veel meer as 'n 9-putgholfbaan — ons is 'n ontmoetingsplek wat die hele gemeenskap saambring.",
+      about_p2: "Van ons lewendige sportkroeg tot ons mededingende Rolbalspan, van Saterdagoggend-parkruns tot Woensdagaand-jokertreks en biljarbaanaande — daar gebeur altyd iets by Koster Gholfklub vir almal.",
+      about_p3: "Ons is verbind tot die groei van die sport op grondvlak, die ondersteuning van jeugontwikkeling, en die skep van 'n verwelkomende omgewing vir spelers, gesinne en besoekers.",
+      about_owner_role: "Eienaar &amp; Klubbestuurder",
+      hl1_title: "9-Put Gholfbaan",
+      hl1_desc: "'n Volledige 9-putbaan pragtig onderhou in die Noordwes-landskap, verwelkomend vir gholfspelers van alle vaardigheidsvlakke.",
+      hl2_title: "Sportklub &amp; Kroeg",
+      hl2_desc: "Ontspan in ons volledige sportklub en kroeg — die perfekte plek na 'n wonderlike rondte of 'n groot wedstrydaand.",
+      hl3_title: "Rolbalspan",
+      hl3_desc: "Ons mededingende Rolbalspan verteenwoordig Koster met trots op streeksvlak. Kom wys jou ondersteuning!",
+      hl4_title: "Gemeenskap Eerste",
+      hl4_desc: "Ons ondersteun aktief jeugontwikkeling, gesonde leefstyl en sosiale betrokkenheid deur die hele Noordwes-Provinsie.",
+      events_label: "Wat is aan die Gang",
+      events_title: "Klubgeleenthede &amp; Aktiwiteite",
+      ev1_name: "Rolbalspan",
+      ev1_desc: "Koster Gholfklub stel 'n trotse Rolbalspan in om ons gemeenskap by streekskompetisies te verteenwoordig.",
+      ev2_name: "Parkloop",
+      ev2_desc: "Sluit aan by ons gratis weeklikse 5km Parkloop elke Saterdagoggend. Alle ouderdomme, alle tempo's — almal is welkom!",
+      ev3_name: "Jokertrek",
+      ev3_desc: "Probeer jou geluk by ons uiters gewilde Woensdag-Jokertrek! 'n Koster-tradisie wat elke week aanhou groei.",
+      ev4_name: "Biljarbaanaande",
+      ev4_desc: "Daag jou vriende uit of maak nuwe vriende by ons Biljarbaanaande elke Saterdag- en Woensdagaand.",
+      gallery_label: "Galery",
+      gallery_title: "Klubfoto's",
+      gallery_intro: "'n Kykie na ons pragtige baan, lewendige sportkroeg, en die gemeenskapsgees wat Koster Gholfklub so spesiaal maak.",
+      sponsors_label: "Ons Vennote",
+      sponsors_title: "Klubborge",
+      sponsors_intro: "Ons is dankbaar vir elke besigheid en organisasie wat Koster Gholfklub ondersteun. Borgplekke is beskikbaar — word deel van ons reis.",
+      sp_cta_h3: "Vennootskap met Koster Gholfklub",
+      sp_cta_p: "Posisioneer jou handelsmerk saam met sport, gemeenskapstrots en plaaslike ontwikkeling in die Noordwes-Provinsie.",
+      sp_btn1: "Doen Aansoek as Borg",
+      sp_btn2: "Bekyk Borgpakkette",
+      course_label: "Die Baan",
+      course_title: "9-Put Baanuitleg",
+      carts_label: "Vervoer op die Baan",
+      carts_title: "Gholfkarretjies",
+      feedback_label: "Sê Jou Sê",
+      feedback_title: "Klagtes &amp; Voorstelle",
+      contact_label: "Kontak Ons",
+      contact_title: "Kontak",
+      contact_role: "Klubkontak",
+      carts_p1: "Geniet jou rondte in gemak met een van ons gholfkarretjies. Karretjies is beskikbaar vir huur en maak dit vinnig, maklik en aangenaam om op die baan te beweeg &mdash; veral op 'n warm Noordwes-dag.",
+      carts_warn_title: "&#9888; Belangrik &mdash; Bespreek van Tevore",
+      carts_warn_p: "Gholfkarretjies is baie gesog, veral oor naweke en openbare vakansiedae. <strong>Bespreek asseblief jou karretjie voor jy by die klub aankom</strong> om teleurstelling te vermy. Inloopbeskikbaarheid kan nie gewaarborg word nie.",
+      carts_book_p: "Om 'n karretjie te bespreek, kontak die klub direk by <strong>072 410 8960</strong> (Azel) of <strong>076 916 3960</strong> (Hannetjie).",
+      carts_ride: "Ry die Baan",
+      carts_avail: "Karretjies beskikbaar vir 9-putrondte. Beperkte eenhede &mdash; eerste bespreek, eerste bedien.",
+      carts_contact_note: "Kontak die klub vir beskikbaarheid &amp; pryse",
+      feedback_p1: "Ons neem elke klagte en voorstel ernstig op. Jou terugvoer gaan direk na bestuur en help ons om Koster Gholfklub vir almal te verbeter.",
+      feedback_priv_title: "&#128274; Jou Privaatheid",
+      feedback_priv_p: 'Alle klagtes en voorstelle word as <strong style="color:white;">streng vertroulik</strong> hanteer. Jou naam en kontaknommer is nodig sodat bestuur kan opvolg — hierdie inligting sal <strong style="color:white;">nooit gedeel word</strong> met ander lede of personeel nie.',
+      feedback_anon_title: "&#9888; Anonieme inskrywings word nie aanvaar nie",
+      feedback_anon_p: "Volgens klubbeleid sal klagtes sonder naam en kontaknommer nie deur die bestuurder hersien word nie. Vul asseblief alle verpligte velde in.",
+      feedback_name_lbl: "Volle Naam *",
+      feedback_phone_lbl: "Kontaknommer *",
+      feedback_type_lbl: "Tipe",
+      feedback_msg_lbl: "Jou Boodskap *",
+      feedback_submit: "Stuur na Bestuur →",
+      contact_loc_lbl: "Ligging",
+      contact_location_val: "Koster, Noordwes-Provinsie<br/>Suid-Afrika",
+      contact_owner_lbl: "Eienaar / Bestuurder",
+      contact_act_lbl: "Gereelde Aktiwiteite",
+      contact_activities1: "Parkloop: Sat &middot; Jokertrek: Woe",
+      contact_activities2: "Biljarbaanaande: Sat &amp; Woe",
+      footer_desc: "&#39;n Gemeenskapsgedrewe gholf- en sportklub in die hart van Koster, Noordwes-Provinsie. 9 gate, &#39;n sportkroeg, Rolbalspan, parkloop, jokertreks en biljarbaanaande &mdash; iets vir almal.",
+      footer_explore: "Verken",
+      footer_about: "Oor die Klub",
+      footer_events: "Geleenthede &amp; Aktiwiteite",
+      footer_course: "Die Baan",
+      footer_sponsorship: "Borgskappe",
+      footer_sp_proposal: "Borgskapsvoorstel",
+      footer_sp_apply: "Doen Aansoek as Borg",
+      footer_sp_current: "Huidige Borge",
+      course_stat_holes_lbl: "Totale Gate",
+      course_stat_holes_sub: "9-Put Uitleg",
+      course_stat_fac_lbl: "Fasiliteite",
+      course_holes_lbl: "Alle 9 Gate",
+    }
+  };
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'af' : 'en';
+    applyLang();
+  }
+
+  function applyLang() {
+    const t = translations[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    const btn = document.getElementById('lang-toggle');
+    if (btn) btn.innerHTML = currentLang === 'en' ? '🌐 Afrikaans' : '🌐 English';
+    document.documentElement.lang = currentLang === 'en' ? 'en' : 'af';
+  }
+  // ========== END LANGUAGE SYSTEM ==========
+
   function switchCourseTab(tab){
     const m=document.getElementById('course-panel-map'),s=document.getElementById('course-panel-sat');
     const tm=document.getElementById('tab-map'),ts=document.getElementById('tab-sat');
